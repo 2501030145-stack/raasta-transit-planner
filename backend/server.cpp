@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cctype>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
@@ -123,6 +124,81 @@ static json route(const Network& n, const std::string& start, const std::string&
   return {{"stationIds",ids},{"edges",edgeList},{"distanceKm",distance},{"minutes",minutes},{"fareInr",fare},{"stops",stops},{"hops",edges.size()},{"transfers",transfers},{"criterion",criterion}};
 }
 
+
+static int numericStationId(const Network& n, const std::string& id) {
+  for (std::size_t i=0;i<n.stations.size();++i)
+    if (n.stations[i].id==id) return static_cast<int>(i+1);
+  return 0;
+}
+
+static const Station* stationByNumericId(const Network& n, int id) {
+  if (id<1 || static_cast<std::size_t>(id)>n.stations.size()) return nullptr;
+  return &n.stations[static_cast<std::size_t>(id-1)];
+}
+
+static json apiStation(const Station& s, int id) {
+  std::string type=s.modes.empty()?"transit":s.modes.front();
+  std::transform(type.begin(),type.end(),type.begin(),
+    [](unsigned char ch){return static_cast<char>(std::tolower(ch));});
+  std::replace(type.begin(),type.end(),' ','_');
+
+  return {
+    {"id",id},{"name",s.name},{"code","RA-"+std::to_string(id)},
+    {"latitude",s.lat},{"longitude",s.lng},{"city_name",s.city},
+    {"station_type",type+"_station"},
+    {"is_interchange",s.lines.size()>1},
+    {"is_active",true},{"data_status","sample"}
+  };
+}
+
+static json apiRoute(const Network& n, const std::string& origin,
+                     const std::string& destination,
+                     const std::string& criterion) {
+  try {
+    const json result=route(n,origin,destination,criterion);
+    json stations=json::array(), segments=json::array();
+
+    for (const auto& id:result.at("stationIds")) {
+      const int numeric=numericStationId(n,id.get<std::string>());
+      const Station* station=stationByNumericId(n,numeric);
+      if (station)
+        stations.push_back({{"id",numeric},{"name",station->name}});
+    }
+
+    std::string lastLine;
+    for (const auto& edge:result.at("edges")) {
+      const std::string lineId=edge.at("line");
+      const Line* line=findLine(n,lineId);
+      const bool transfer=!lastLine.empty() && lastLine!=lineId;
+
+      segments.push_back({
+        {"from_station_id",numericStationId(n,edge.at("from").get<std::string>())},
+        {"to_station_id",numericStationId(n,edge.at("to").get<std::string>())},
+        {"line_name",line?line->name:lineId},
+        {"transport_type_name",line?line->mode:"Transit"},
+        {"estimated_time_min",edge.at("minutes")},
+        {"distance_km",edge.at("distanceKm")},
+        {"fare_amount",edge.at("fareInr")},
+        {"is_transfer",transfer}
+      });
+      lastLine=lineId;
+    }
+
+    return {
+      {"found",true},{"stations",stations},{"segments",segments},
+      {"estimated_time_min",result.value("minutes",0.0)},
+      {"total_distance_km",result.value("distanceKm",0.0)},
+      {"total_fare",result.value("fareInr",0.0)},
+      {"number_of_stops",result.value("stops",0)},
+      {"number_of_transfers",result.value("transfers",0)},
+      {"fare_status","sample_estimate"}
+    };
+  } catch (const std::exception&) {
+    return {{"found",false}};
+  }
+}
+
+
 int main() {
   try {
     Network network; MYSQL* db=nullptr;
@@ -135,14 +211,58 @@ int main() {
       network=loadMysql(db);
     }
     httplib::Server server;
-    server.Get("/api/health",[&](const httplib::Request&,httplib::Response& res){ res.set_content(json({{"ok",true},{"dataSource",demo?"demo-file":"mysql"},{"stations",network.stations.size()},{"connections",network.edges.size()}}).dump(),"application/json"); });
-    server.Get("/api/stations",[&](const httplib::Request&,httplib::Response& res){ json items=json::array(); for(const auto& s:network.stations) items.push_back(stationJson(s)); res.set_content(items.dump(),"application/json"); });
-    server.Post("/api/routes",[&](const httplib::Request& req,httplib::Response& res){
-      try { const auto input=json::parse(req.body); const std::string criterion=input.value("criterion","time"); if (criterion!="distance" && criterion!="time" && criterion!="fare" && criterion!="stops") throw std::invalid_argument("criterion must be distance, time, fare, or stops"); const auto result=route(network,input.at("origin"),input.at("destination"),criterion); res.set_content(result.dump(),"application/json"); }
-      catch(const std::exception& e){ res.status=400; res.set_content(json({{"error",e.what()}}).dump(),"application/json"); }
+    server.Get("/api/health",[&](const httplib::Request&,httplib::Response& res){
+      res.set_content(json({
+        {"ok",true},{"dataSource",demo?"demo-file":"mysql"},
+        {"stations",network.stations.size()},{"connections",network.edges.size()}
+      }).dump(),"application/json");
     });
+
+    server.Get("/api/v1/stations",[&](const httplib::Request&,httplib::Response& res){
+      json items=json::array();
+      for(std::size_t i=0;i<network.stations.size();++i)
+        items.push_back(apiStation(network.stations[i],static_cast<int>(i+1)));
+      res.set_content(json({
+        {"success",true},{"count",items.size()},{"stations",items}
+      }).dump(),"application/json");
+    });
+
+    server.Post("/api/v1/routes/compare",[&](const httplib::Request& req,httplib::Response& res){
+      try {
+        const auto input=json::parse(req.body);
+        const int source=input.at("source_station_id").get<int>();
+        const int destination=input.at("destination_station_id").get<int>();
+
+        const Station* from=stationByNumericId(network,source);
+        const Station* to=stationByNumericId(network,destination);
+
+        if(!from || !to)
+          throw std::invalid_argument("Unknown station ID.");
+        if(source==destination)
+          throw std::invalid_argument("Choose two different stations.");
+
+        json comparisons={
+          {"fastest",apiRoute(network,from->id,to->id,"time")},
+          {"shortest",apiRoute(network,from->id,to->id,"distance")},
+          {"cheapest",apiRoute(network,from->id,to->id,"fare")},
+          {"min_stops",apiRoute(network,from->id,to->id,"stops")}
+        };
+
+        res.set_content(json({
+          {"success",true},{"comparisons",comparisons},
+          {"data_source",demo?"sample_network":"mysql"}
+        }).dump(),"application/json");
+
+      } catch(const std::exception& e) {
+        res.status=400;
+        res.set_content(json({
+          {"success",false},{"error",e.what()}
+        }).dump(),"application/json");
+      }
+    });
+
     server.set_error_handler([](const httplib::Request&,httplib::Response& res){ if(res.status==404) res.set_content(R"({"error":"Not found"})","application/json"); });
-    const int port=std::stoi(env("API_PORT","8080")); std::cout<<"Raasta API listening on 0.0.0.0:"<<port<<" ("<<(demo?"explicit demo data":"MySQL")<<")\n";
+    const int port=std::stoi(env("PORT",env("API_PORT","8080"))); std::cout<<"Raasta API listening on 0.0.0.0:"<<port<<" ("<<(demo?"explicit demo data":"MySQL")<<")\n";
     if (db) mysql_close(db);
     if (!server.listen("0.0.0.0",port)) throw std::runtime_error("Could not bind API port");
   } catch(const std::exception& e) { std::cerr<<"Raasta API startup error: "<<e.what()<<"\n"; return 1; }
