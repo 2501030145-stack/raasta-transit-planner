@@ -1,0 +1,16 @@
+from_code,to_code,line_code,distance_km,estimated_time_min,is_bidirectional,data_status
+RRTS_SKK,RRTS_NAN,NCRTC_DGM,5.2,4.0,1,verified
+RRTS_NAN,RRTS_ANV,NCRTC_DGM,6.1,5.0,1,verified
+RRTS_ANV,RRTS_SHB,NCRTC_DGM,5.4,4.5,1,verified
+RRTS_SHB,RRTS_GZB,NCRTC_DGM,7.1,5.5,1,verified
+RRTS_GZB,RRTS_GLD,NCRTC_DGM,3.9,3.5,1,verified
+RRTS_GLD,RRTS_DUH,NCRTC_DGM,4.6,4.0,1,verified
+RRTS_DUH,RRTS_MDN,NCRTC_DGM,6.2,5.0,1,verified
+RRTS_MDN,RRTS_MNS,NCRTC_DGM,6.8,5.5,1,verified
+RRTS_MNS,RRTS_MNN,NCRTC_DGM,4.1,3.5,1,verified
+RRTS_MNN,RRTS_MRS,NCRTC_DGM,8.3,6.5,1,verified
+RRTS_MRS,RRTS_SHT,NCRTC_DGM,5.5,4.5,1,verified
+RRTS_SHT,RRTS_MCT,NCRTC_DGM,4.3,3.5,1,verified
+RRTS_MCT,RRTS_BGP,NCRTC_DGM,3.5,3.0,1,verified
+RRTS_BGP,RRTS_MRN,NCRTC_DGM,5.5,4.5,1,verified
+RRTS_MRN,RRTS_MDP,NCRTC_DGM,5.65,4.5,1,verified

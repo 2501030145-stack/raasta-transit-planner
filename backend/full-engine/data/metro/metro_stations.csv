@@ -1,0 +1,307 @@
+code,name,alternate_names,latitude,longitude,city,state,lines,is_interchange,data_status,source
+DEL_RTH,Rithala,Rohini Sector 5,28.7208000,77.1072000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_RWE,Rohini West,Sector 6 Rohini,28.7148000,77.1152000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_REA,Rohini East,Sector 8 Rohini,28.7131000,77.1264000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_PTP,Pitampura,Madhuban Chowk,28.7032000,77.1328000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_KTE,Kohat Enclave,Kohat Enclave Pitampura,28.6978000,77.1408000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_NSP,Netaji Subhash Place,NSP Pitampura,28.6954000,77.1524000,Delhi,Delhi,"DMRC_RED,DMRC_PINK",1,verified,DMRC Official Network
+DEL_KVP,Keshav Puram,Keshavpuram,28.6892000,77.1616000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_KNN,Kanhaiya Nagar,Tri Nagar Kanhaiya Nagar,28.6828000,77.1654000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_IDL,Inderlok,Inder Lok Metro,28.6734000,77.1706000,Delhi,Delhi,"DMRC_RED,DMRC_GREEN",1,verified,DMRC Official Network
+DEL_SHN,Shastri Nagar,Sarai Rohilla Shastri Nagar,28.6698000,77.1812000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_PRN,Pratap Nagar,Subzi Mandi Pratap Nagar,28.6668000,77.1942000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_PLB,Pul Bangash,Pulbangash,28.6662000,77.2064000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_TZH,Tis Hazari,Tis Hazari Courts,28.6672000,77.2166000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_KG,Kashmere Gate,ISBT Kashmere Gate,28.6675000,77.2285000,Delhi,Delhi,"DMRC_RED,DMRC_YELLOW,DMRC_VIOLET",1,verified,DMRC Official Network
+DEL_SHP,Shastri Park,Shastri Park Depot,28.6684000,77.2502000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_SLP,Seelampur,Seelampur Market,28.6698000,77.2652000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_WLC,Welcome,Welcome Seelampur,28.6719000,77.2776000,Delhi,Delhi,"DMRC_RED,DMRC_PINK",1,verified,DMRC Official Network
+DEL_SHD,Shahdara,Shahdara Railway Station Metro,28.6734000,77.2894000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_MSP,Mansarovar Park,Mansarover Park,28.6756000,77.3006000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_JLM,Jhilmil,Jhilmil Colony,28.6772000,77.3122000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+DEL_DSG,Dilshad Garden,Dilshad Garden Border,28.6759000,77.3214000,Delhi,Delhi,DMRC_RED,0,verified,DMRC Official Network
+GZB_SHN,Shaheed Nagar,Shaheed Nagar Ghaziabad,28.6751000,77.3326000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_RJB,Raj Bagh,Rajbagh Ghaziabad,28.6754000,77.3412000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_MHM,Major Mohit Sharma Rajendra Nagar,Rajendra Nagar Sahibabad,28.6766000,77.3468000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_SYN,Shyam Park,Shyam Park Sahibabad,28.6782000,77.3612000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_MHN,Mohan Nagar,Mohan Nagar Junction,28.6798000,77.3824000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_ART,Arthala,Arthala Mohan Nagar,28.6784000,77.3986000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_HNR,Hindon River,Hindon Ghaziabad,28.6742000,77.4142000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+GZB_SHS,Shaheed Sthal (New Bus Adda),Ghaziabad Bus Adda,28.6708000,77.4289000,Ghaziabad,Uttar Pradesh,DMRC_RED,0,verified,DMRC Official Network
+DEL_SMB,Samaypur Badli,Badli Terminal,28.7456000,77.1354000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_R18,Rohini Sector 18-19,Rohini 18,28.7382000,77.1428000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_HBM,Haiderpur Badli Mor,Badli Mor,28.7242000,77.1554000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_JHP,Jahangirpuri,Jahangir Puri,28.7186000,77.1684000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_ADR,Adarsh Nagar,Adarsh Nagar Railway Station,28.7148000,77.1742000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_AZP,Azadpur,Azadpur Mandi,28.7067000,77.1812000,Delhi,Delhi,"DMRC_YELLOW,DMRC_PINK",1,verified,DMRC Official Network
+DEL_MTW,Model Town,Model Town III,28.7012000,77.1936000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_GTB,Guru Tegh Bahadur Nagar,GTB Nagar Kingsway Camp,28.6978000,77.2064000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_VSP,Vishwa Vidyalaya,Delhi University North Campus,28.6946000,77.2144000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_VDS,Vidhan Sabha,Delhi Assembly,28.6872000,77.2208000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_CVL,Civil Lines,Civil Lines Delhi,28.6764000,77.2248000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_CC,Chandni Chowk,Old Delhi Railway Station,28.6578000,77.2301000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_CWB,Chawri Bazar,Jama Masjid Chawri Bazar,28.6496000,77.2264000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_NDLS,New Delhi Metro,NDLS Airport Express Interchange,28.6431000,77.2223000,Delhi,Delhi,"DMRC_YELLOW,DMRC_AIRPORT",1,verified,DMRC Official Network
+DEL_RC,Rajiv Chowk,Connaught Place,28.6328000,77.2197000,Delhi,Delhi,"DMRC_YELLOW,DMRC_BLUE_MAIN",1,verified,DMRC Official Network
+DEL_PTC,Patel Chowk,Dak Bhawan Patel Chowk,28.6234000,77.2142000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_CS,Central Secretariat,Kendriya Sachivalaya,28.6147000,77.2120000,Delhi,Delhi,"DMRC_YELLOW,DMRC_VIOLET",1,verified,DMRC Official Network
+DEL_UBH,Udyog Bhawan,Nirman Bhawan,28.6112000,77.2124000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_LKM,Lok Kalyan Marg,Race Course PM Residence,28.5996000,77.2118000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_JRB,Jor Bagh,Safdarjung Tomb,28.5884000,77.2122000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_INA,Dilli Haat - INA,INA Colony,28.5744000,77.2097000,Delhi,Delhi,"DMRC_YELLOW,DMRC_PINK",1,verified,DMRC Official Network
+DEL_AIM,AIIMS,All India Institute of Medical Sciences,28.5684000,77.2078000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_GNP,Green Park,Green Park Market,28.5586000,77.2064000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_HK,Hauz Khas,IIT Hauz Khas,28.5432000,77.2065000,Delhi,Delhi,"DMRC_YELLOW,DMRC_MAGENTA",1,verified,DMRC Official Network
+DEL_MVN,Malviya Nagar,Saket Malviya Nagar,28.5284000,77.2062000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_SKT,Saket,Saket District Centre,28.5198000,77.2036000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_QTM,Qutab Minar,Mehrauli Qutub Minar,28.5126000,77.1856000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_CHT,Chhattarpur,Chhatarpur Temple,28.5064000,77.1742000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_SLT,Sultanpur,Sultanpur MG Road,28.4986000,77.1614000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_GHT,Ghitorni,Ghitorni Village,28.4934000,77.1428000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_AJG,Arjan Garh,Aya Nagar Arjan Garh,28.4812000,77.1264000,Delhi,Delhi,DMRC_YELLOW,0,verified,DMRC Official Network
+GGN_GDC,Guru Dronacharya,Garden Estate Gurugram,28.4818000,77.1032000,Gurugram,Haryana,DMRC_YELLOW,0,verified,DMRC Official Network
+GGN_SIK,Sikanderpur,Sikanderpur Interchange,28.4816000,77.0931000,Gurugram,Haryana,"DMRC_YELLOW,RM_GURUGRAM",1,verified,DMRC Official Network
+GGN_MGR,MG Road,MG Road Gurugram Malls,28.4798000,77.0804000,Gurugram,Haryana,DMRC_YELLOW,0,verified,DMRC Official Network
+GGN_IFC,IFFCO Chowk,IFFCO Chowk Sector 29,28.4722000,77.0724000,Gurugram,Haryana,DMRC_YELLOW,0,verified,DMRC Official Network
+GGN_MCC,Millennium City Centre Gurugram,HUDA City Centre,28.4593000,77.0725000,Gurugram,Haryana,DMRC_YELLOW,0,verified,DMRC Official Network
+DEL_DW21,Dwarka Sector 21,Dwarka 21 Metro,28.5523000,77.0583000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_AIRPORT",1,verified,DMRC Official Network
+DEL_DW08,Dwarka Sector 8,Dwarka 8,28.5642000,77.0674000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DW09,Dwarka Sector 9,Dwarka 9,28.5746000,77.0642000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DW10,Dwarka Sector 10,Dwarka 10,28.5812000,77.0578000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DW11,Dwarka Sector 11,Dwarka 11,28.5886000,77.0564000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DW12,Dwarka Sector 12,Dwarka 12,28.5924000,77.0412000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DW13,Dwarka Sector 13,Dwarka 13,28.5998000,77.0326000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DW14,Dwarka Sector 14,Dwarka 14,28.6024000,77.0256000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_DWK,Dwarka,Dwarka Interchange Grey Line,28.6142000,77.0204000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_GREY",1,verified,DMRC Official Network
+DEL_DWM,Dwarka Mor,Dwarka Mor Bus Terminal,28.6194000,77.0328000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_NWD,Nawada,Nawada Uttam Nagar,28.6212000,77.0436000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_UNW,Uttam Nagar West,Uttam Nagar W,28.6234000,77.0562000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_UNE,Uttam Nagar East,Uttam Nagar E,28.6258000,77.0664000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_JPW,Janakpuri West,Janak Puri West,28.6294000,77.0777000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_MAGENTA",1,verified,DMRC Official Network
+DEL_JPE,Janakpuri East,Janak Puri East,28.6324000,77.0876000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_TLK,Tilak Nagar,Tilak Nagar Market,28.6366000,77.0964000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_SBN,Subhash Nagar,Subhash Nagar Pacific Mall,28.6402000,77.1062000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_TAG,Tagore Garden,Tagore Garden,28.6442000,77.1148000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_RJG,Rajouri Garden,Rajouri Garden Main,28.6492000,77.1228000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_PINK",1,verified,DMRC Official Network
+DEL_RMN,Ramesh Nagar,Ramesh Nagar,28.6528000,77.1304000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_MTN,Moti Nagar,Moti Nagar Crossing,28.6578000,77.1424000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_KRT,Kirti Nagar,Kirti Nagar Industrial,28.6558000,77.1504000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_GREEN",1,verified,DMRC Official Network
+DEL_SHD2,Shadipur,Shadipur Depot,28.6522000,77.1586000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_PTN,Patel Nagar,West Patel Nagar,28.6482000,77.1684000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_RJP,Rajendra Place,Rajendra Place Business Dist,28.6442000,77.1782000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_KBG,Karol Bagh,Karol Bagh Market,28.6446000,77.1902000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_JHW,Jhandewalan,Jhandewalan Temple,28.6442000,77.1998000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_RKA,RK Ashram Marg,Ramakrishna Ashram Marg,28.6394000,77.2092000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_BKB,Barakhamba Road,Barakhamba,28.6308000,77.2274000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_MDH,Mandi House,Mandi House Circle,28.6258000,77.2343000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_VIOLET",1,verified,DMRC Official Network
+DEL_SUP,Supreme Court,Pragati Maidan,28.6214000,77.2436000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_INP,Indraprastha,IP Estate,28.6202000,77.2534000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_YMB,Yamuna Bank,Yamuna Bank Junction,28.6234000,77.2687000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_BLUE_BRANCH",1,verified,DMRC Official Network
+DEL_AKD,Akshardham,Akshardham Temple,28.6186000,77.2798000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_MYV,Mayur Vihar - I,Mayur Vihar Phase 1,28.6053000,77.2946000,Delhi,Delhi,"DMRC_BLUE_MAIN,DMRC_PINK",1,verified,DMRC Official Network
+DEL_MVE,Mayur Vihar Extension,Mayur Vihar Ext,28.5942000,77.3042000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_NAN,New Ashok Nagar,New Ashok Nagar Border,28.5898000,77.3114000,Delhi,Delhi,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S15,Noida Sector 15,Noida 15,28.5842000,77.3146000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S16,Noida Sector 16,Noida 16,28.5786000,77.3178000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S18,Noida Sector 18,Atta Market Sector 18,28.5708000,77.3242000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_BOT,Botanical Garden,Botanical Garden Noida,28.5641000,77.3342000,Noida,Uttar Pradesh,"DMRC_BLUE_MAIN,DMRC_MAGENTA",1,verified,DMRC Official Network
+NOI_GLF,Golf Course,Noida Golf Course,28.5672000,77.3458000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_NCC,Noida City Centre,Sector 32 Noida,28.5746000,77.3562000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S34,Noida Sector 34,Sector 34 Noida,28.5824000,77.3624000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S52,Noida Sector 52,Sector 52 Blue Line,28.5916000,77.3688000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,1,verified,DMRC Official Network
+NOI_S61,Noida Sector 61,Sector 61 Noida,28.6012000,77.3698000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S59,Noida Sector 59,Sector 59 Noida,28.6114000,77.3712000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_S62,Noida Sector 62,Sector 62 Noida,28.6212000,77.3742000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+NOI_NEC,Noida Electronic City,Electronic City Sector 62,28.6288000,77.3768000,Noida,Uttar Pradesh,DMRC_BLUE_MAIN,0,verified,DMRC Official Network
+DEL_LMN,Laxmi Nagar,Laxmi Nagar Vikas Marg,28.6308000,77.2774000,Delhi,Delhi,DMRC_BLUE_BRANCH,0,verified,DMRC Official Network
+DEL_NMV,Nirman Vihar,Nirman Vihar V3S Mall,28.6366000,77.2858000,Delhi,Delhi,DMRC_BLUE_BRANCH,0,verified,DMRC Official Network
+DEL_PRV,Preet Vihar,Preet Vihar Commercial,28.6412000,77.2942000,Delhi,Delhi,DMRC_BLUE_BRANCH,0,verified,DMRC Official Network
+DEL_KKD,Karkarduma,Karkardooma Court,28.6568000,77.3032000,Delhi,Delhi,"DMRC_BLUE_BRANCH,DMRC_PINK",1,verified,DMRC Official Network
+DEL_ANVT,Anand Vihar ISBT,Anand Vihar Terminal,28.6469000,77.3160000,Delhi,Delhi,"DMRC_BLUE_BRANCH,DMRC_PINK",1,verified,DMRC Official Network
+GZB_KSH,Kaushambi,Kaushambi Ghaziabad,28.6454000,77.3242000,Ghaziabad,Uttar Pradesh,DMRC_BLUE_BRANCH,0,verified,DMRC Official Network
+GZB_VSH,Vaishali,Vaishali Ghaziabad,28.6499000,77.3396000,Ghaziabad,Uttar Pradesh,DMRC_BLUE_BRANCH,0,verified,DMRC Official Network
+DEL_LAL,Lal Quila,Red Fort,28.6562000,77.2374000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_JAM,Jama Masjid,Jama Masjid Delhi,28.6498000,77.2372000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_DLG,Delhi Gate,Delhi Gate Feroz Shah Kotla,28.6412000,77.2404000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_ITO,ITO,ITO Crossing,28.6312000,77.2412000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_JNP,Janpath,Janpath Market,28.6212000,77.2184000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_KMK,Khan Market,Khan Market Sujan Singh Park,28.6012000,77.2274000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_JLN,Jawaharlal Nehru Stadium,JLN Stadium Lodhi Road,28.5912000,77.2342000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_JPG,Jangpura,Jangpura Pant Nagar,28.5834000,77.2384000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_LAK,Lajpat Nagar,Lajpat Nagar Central Market,28.5708000,77.2374000,Delhi,Delhi,"DMRC_VIOLET,DMRC_PINK",1,verified,DMRC Official Network
+DEL_MLC,Moolchand,Moolchand Hospital,28.5654000,77.2342000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_KLC,Kailash Colony,Kailash Colony Market,28.5552000,77.2424000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_NHP,Nehru Place,Nehru Place Commercial Centre,28.5492000,77.2514000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_KAL,Kalkaji Mandir,Kalkaji Temple,28.5498000,77.2582000,Delhi,Delhi,"DMRC_VIOLET,DMRC_MAGENTA",1,verified,DMRC Official Network
+DEL_GVP,Govind Puri,Govindpuri Okhla,28.5386000,77.2642000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_HNO,Harkesh Nagar Okhla,Okhla Phase II,28.5312000,77.2714000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_JSA,Jasola Apollo,Apollo Hospital Jasola,28.5242000,77.2834000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_SRV,Sarita Vihar,Sarita Vihar Crossing,28.5178000,77.2912000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_MHE,Mohan Estate,Mohan Co-operative Industrial,28.5086000,77.3012000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_TKS,Tughlakabad Station,Tughlaqabad,28.4984000,77.3086000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_BDP,Badarpur Border,Delhi Haryana Border Badarpur,28.4892000,77.3074000,Delhi,Delhi,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_SAR,Sarai,Sarai Faridabad,28.4746000,77.3082000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_NHP,NHPC Chowk,NHPC Faridabad,28.4612000,77.3094000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_MWM,Mewala Maharajpur,Mewla Maharajpur,28.4486000,77.3102000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_S28,Sector 28,Faridabad Sector 28,28.4324000,77.3114000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_BDM,Badkal Mor,Badkhal Mor,28.4186000,77.3128000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_OFB,Old Faridabad,Old Faridabad Railway Station,28.4042000,77.3142000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_NCA,Neelam Chowk Ajronda,Ajronda Faridabad,28.3886000,77.3154000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_BTM,Bata Chowk,Faridabad Bata,28.3752000,77.3168000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_ESM,Escorts Mujesar,Mujesar Escorts,28.3612000,77.3172000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_STS,Sant Surdas (Sihi),Sihi Faridabad,28.3498000,77.3174000,Faridabad,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+FBD_RNS,Raja Nahar Singh (Ballabhgarh),Ballabgarh Metro,28.3391000,77.3175000,Ballabhgarh,Haryana,DMRC_VIOLET,0,verified,DMRC Official Network
+DEL_MJP,Majlis Park,Majlis Park Ring Road,28.7183000,77.1793000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_SMB2,Shalimar Bagh,Shalimar Bagh Ring Road,28.6998000,77.1684000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_SKP,Shakurpur,Shakurpur Ring Road,28.6912000,77.1412000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_PBW,Punjabi Bagh West,Punjabi Bagh W,28.6734000,77.1324000,Delhi,Delhi,"DMRC_PINK,DMRC_GREEN",1,verified,DMRC Official Network
+DEL_ESI,ESI Hospital Basaidarapur,ESI Hospital Ring Road,28.6624000,77.1284000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_MYP,Maya Puri,Mayapuri Industrial Area,28.6386000,77.1264000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_NRV,Naraina Vihar,Naraina Ring Road,28.6274000,77.1384000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_DLC,Delhi Cantonment,Delhi Cantt Metro,28.6012000,77.1486000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_DHK,Durgabai Deshmukh South Campus,Dhaula Kuan South Campus,28.5886000,77.1624000,Delhi,Delhi,DMRC_PINK,1,verified,DMRC Official Network
+DEL_MVB,Sir M. Vishweshwaraiah Moti Bagh,Moti Bagh Ring Road,28.5794000,77.1742000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_BKC,Bhikaji Cama Place,Bhikaji Cama,28.5712000,77.1864000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_SRJ,Sarojini Nagar,Sarojini Nagar Market,28.5724000,77.1986000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_SOE,South Extension,South Ext Part 1 & 2,28.5714000,77.2212000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_VNB,Vinobapuri,Vinoba Puri,28.5684000,77.2486000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_ASH,Ashram,Ashram Chowk,28.5712000,77.2584000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_SKK_M,Sarai Kale Khan - Nizamuddin,Hazrat Nizamuddin Railway Metro,28.5886000,77.2562000,Delhi,Delhi,DMRC_PINK,1,verified,DMRC Official Network
+DEL_MVP,Mayur Vihar Pocket 1,MV Pocket 1,28.6112000,77.2998000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_TLS,Trilokpuri Sanjay Lake,Trilokpuri,28.6186000,77.3042000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_EVN,East Vinod Nagar - Mayur Vihar-II,East Vinod Nagar,28.6274000,77.3086000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_MWV,Mandawali - West Vinod Nagar,Mandawali,28.6342000,77.3064000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_IPE,IP Extension,IP Ext Patparganj,28.6412000,77.3078000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_KKC,Karkarduma Court,Karkardooma Court Complex,28.6624000,77.2986000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_KRN,Krishna Nagar,Krishna Nagar Market,28.6664000,77.2886000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_EAN,East Azad Nagar,Azad Nagar East,28.6688000,77.2824000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_JFR,Jaffrabad,Jafrabad,28.6784000,77.2734000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_MJB,Maujpur - Babarpur,Maujpur Chowk,28.6864000,77.2712000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_GKP_M,Gokulpuri,Gokul Puri,28.6974000,77.2742000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_JHE,Johri Enclave,Johri Enclave Border,28.7042000,77.2814000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_SHV,Shiv Vihar,Shiv Vihar Terminal,28.7118000,77.2913000,Delhi,Delhi,DMRC_PINK,0,verified,DMRC Official Network
+DEL_DBM,Dabri Mor - Janakpuri South,Dabri Mor,28.6186000,77.0864000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_DSP,Dashrath Puri,Dashrathpuri,28.6084000,77.0898000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_PLM,Palam,Palam Village Palam Colony,28.5912000,77.0886000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_SBC,Sadar Bazar Cantonment,Delhi Cantt Sadar Bazar,28.5814000,77.1084000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_T1A,Terminal 1-IGI Airport,Domestic Airport Terminal 1,28.5612000,77.1214000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_SKV,Shankar Vihar,Shankar Vihar Military Cantt,28.5542000,77.1386000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_VSV,Vasant Vihar,Vasant Vihar Market,28.5584000,77.1612000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_MNR,Munirka,Munirka Crossing,28.5582000,77.1742000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_RKP,RK Puram,Rama Krishna Puram,28.5512000,77.1864000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_IIT,IIT Delhi,Indian Institute of Technology Delhi,28.5442000,77.1942000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_PSP,Panchsheel Park,Panchsheel Enclave,28.5436000,77.2184000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_CRD,Chirag Delhi,Chirag Dilli BRT,28.5442000,77.2298000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_GKL,Greater Kailash,GK 2 Enclave,28.5448000,77.2412000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_NHE,Nehru Enclave,Kalkaji Nehru Enclave,28.5472000,77.2514000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_OKN,Okhla NSIC,NSIC Okhla,28.5542000,77.2664000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_SKV2,Sukhdev Vihar,Masih Garh Sukhdev Vihar,28.5612000,77.2742000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_JMI,Jamia Millia Islamia,Jamia University,28.5624000,77.2842000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_OKV,Okhla Vihar,Okhla Village,28.5598000,77.2942000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_JSV,Jasola Vihar Shaheen Bagh,Shaheen Bagh Jasola,28.5478000,77.3012000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_KLK,Kalindi Kunj,Kalindi Kunj Yamuna,28.5442000,77.3114000,Delhi,Delhi,DMRC_MAGENTA,0,verified,DMRC Official Network
+NOI_OBS,Okhla Bird Sanctuary,Noida Entrance Bird Sanctuary,28.5486000,77.3242000,Noida,Uttar Pradesh,DMRC_MAGENTA,0,verified,DMRC Official Network
+DEL_SRM,Satguru Ram Singh Marg,Ram Singh Marg,28.6624000,77.1562000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_APM,Ashok Park Main,Ashok Park,28.6712000,77.1584000,Delhi,Delhi,DMRC_GREEN,1,verified,DMRC Official Network
+DEL_PJB,Punjabi Bagh,Punjabi Bagh East,28.6724000,77.1428000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_SJP,Shivaji Park,Shivaji Park Rohtak Road,28.6742000,77.1214000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_MDP,Madipur,Madipur Village,28.6752000,77.1114000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_PVE,Paschim Vihar East,Paschim Vihar E,28.6764000,77.1012000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_PVW,Paschim Vihar West,Paschim Vihar W Jwala Heri,28.6782000,77.0898000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_PRG,Peeragarhi,Peera Garhi Chowk Outer Ring,28.6798000,77.0784000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_UDN,Udyog Nagar,Udyog Nagar Rohtak Road,28.6812000,77.0684000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_SJM,Maharaja Surajmal Stadium,Surajmal Stadium,28.6824000,77.0586000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_NGL,Nangloi,Nangloi Chowk,28.6834000,77.0484000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_NGR,Nangloi Railway Station,Nangloi Rail,28.6842000,77.0384000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_RDP,Rajdhani Park,Rajdhani Park Rohtak Rd,28.6852000,77.0264000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_MND,Mundka,Mundka Village,28.6864000,77.0124000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_MIA,Mundka Industrial Area,MIA,28.6874000,76.9984000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_GHV,Ghevra,Ghevra Railway Crossing,28.6886000,76.9784000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_TKK,Tikri Kalan,Tikri Kalan Village,28.6898000,76.9584000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_TKB,Tikri Border,Delhi Haryana Border Tikri,28.6912000,76.9384000,Delhi,Delhi,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_PSR,Pandit Shree Ram Sharma,Modern Industrial Estate MIE,28.6924000,76.9298000,Bahadurgarh,Haryana,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_BHS,Brigadier Hoshiar Singh,Bahadurgarh City Bus Stand,28.6942000,76.9208000,Bahadurgarh,Haryana,DMRC_GREEN,0,verified,DMRC Official Network
+DEL_SVS,Shivaji Stadium,Connaught Place Shivaji Stadium,28.6294000,77.2132000,Delhi,Delhi,DMRC_AIRPORT,0,verified,DMRC Official Network
+DEL_DHK_A,Dhaula Kuan Airport Metro,Dhaula Kuan Ring Road,28.5914000,77.1612000,Delhi,Delhi,DMRC_AIRPORT,1,verified,DMRC Official Network
+DEL_AER,Delhi Aerocity,Aerocity Hospitality District,28.5498000,77.1214000,Delhi,Delhi,DMRC_AIRPORT,0,verified,DMRC Official Network
+DEL_T3,IGI Airport (Terminal 3),Indira Gandhi International Airport,28.5562000,77.0863000,Delhi,Delhi,DMRC_AIRPORT,0,verified,DMRC Official Network
+DEL_YAS,Yashobhoomi Dwarka Sector 25,IICC Convention Centre,28.5471000,77.0452000,Delhi,Delhi,DMRC_AIRPORT,0,verified,DMRC Official Network
+DEL_NGLI,Nangli,Nangli Dairy,28.6146000,77.0014000,Delhi,Delhi,DMRC_GREY,0,verified,DMRC Official Network
+DEL_NJG,Najafgarh,Najafgarh Terminal,28.6124000,76.9854000,Delhi,Delhi,DMRC_GREY,0,verified,DMRC Official Network
+DEL_DBS,Dhansa Bus Stand,Dhansa Stand Najafgarh,28.6084000,76.9742000,Delhi,Delhi,DMRC_GREY,0,verified,DMRC Official Network
+GGN_S55,Sector 55-56,Sector 55-56 Rapid Metro,28.4239000,77.1065000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_S54,Sector 54 Chowk,Sector 54 Chowk,28.4384000,77.1024000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_S53,Sector 53-54,Sector 53-54 South Point Mall,28.4498000,77.0984000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_S42,Sector 42-43,Sector 42-43 Golf Course Road,28.4612000,77.0942000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_PH1,Phase 1,DLF Phase 1 Golf Course Rd,28.4724000,77.0924000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_PH2,Phase 2,DLF Phase 2,28.4902000,77.0908000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_BLV,Belvedere Towers,Belvedere Tower Cyber City,28.4942000,77.0894000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_CYB,Cyber City,DLF Cyber City Hub,28.4952000,77.0886000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_MLS,Moulsari Avenue,Moulsari Avenue Ambience Mall,28.5012000,77.0924000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+GGN_PH3,Phase 3,DLF Phase 3,28.4934000,77.0974000,Gurugram,Haryana,RM_GURUGRAM,0,verified,GMCBL Official Network
+NOI_S51,Noida Sector 51,Sector 51 Aqua Line,28.5925000,77.3698000,Noida,Uttar Pradesh,NMRC_AQUA,1,verified,NMRC Official Network
+NOI_S50,Noida Sector 50,Sector 50 Noida,28.5842000,77.3712000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S76,Noida Sector 76,Sector 76 Noida,28.5724000,77.3764000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S101,Noida Sector 101,Sector 101 Noida,28.5612000,77.3812000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S81,Noida Sector 81,Sector 81 Phase 2,28.5498000,77.3894000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_NSEZ,NSEZ,Noida Special Economic Zone,28.5386000,77.4012000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S83,Noida Sector 83,Sector 83 Noida,28.5274000,77.4124000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S137,Noida Sector 137,Sector 137 Expressway,28.5142000,77.4064000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S142,Noida Sector 142,Sector 142 Expressway,28.4998000,77.4142000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S143,Noida Sector 143,Sector 143 Noida,28.4892000,77.4264000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S144,Noida Sector 144,Sector 144 Noida,28.4784000,77.4386000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S145,Noida Sector 145,Sector 145 Noida,28.4682000,77.4498000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S146,Noida Sector 146,Sector 146 Noida,28.4586000,77.4612000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S147,Noida Sector 147,Sector 147 Noida,28.4512000,77.4724000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_S148,Noida Sector 148,Sector 148 Noida,28.4524000,77.4886000,Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_KP2,Knowledge Park II,KP 2 Greater Noida,28.4586000,77.5024000,Greater Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_PAR,Pari Chowk,Pari Chowk Greater Noida,28.4678000,77.5133000,Greater Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_ALP,Alpha 1,Alpha 1 Commercial Belt,28.4734000,77.5198000,Greater Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_DLT,Delta 1,Delta 1 Greater Noida,28.4684000,77.5286000,Greater Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_GND,GNIDA Office,Greater Noida Authority Office,28.4512000,77.5312000,Greater Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+NOI_DEP,Depot Station,Depot Greater Noida Terminus,28.4357000,77.5256000,Greater Noida,Uttar Pradesh,NMRC_AQUA,0,verified,NMRC Official Network
+LKO_AIR,CCS Airport Lucknow,Chaudhary Charan Singh International Airport,26.7645000,80.8841000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_AMA,Amausi,Amausi Industrial,26.7784000,80.8898000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_TPN,Transport Nagar,Transport Nagar Lucknow,26.7912000,80.8964000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_KRN,Krishna Nagar,Krishna Nagar Lucknow,26.8024000,80.9012000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_SNG,Singar Nagar,Singar Nagar Alambagh,26.8114000,80.9064000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_ALB,Alambagh,Alambagh Bus Stand Metro,26.8186000,80.9102000,Lucknow,Uttar Pradesh,LMRC_RED,1,verified,UPMRC Official Network
+LKO_ABS,Alambagh Bus Station,Alambagh ISBT,26.8224000,80.9134000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_MVG,Mawaiya,Mawaiya Crossing,26.8286000,80.9168000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_DGR,Durgapuri,Durgapuri Charbagh,26.8312000,80.9184000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_CHR,Charbagh Railway Station Metro,Lucknow Junction Railway Metro,26.8322000,80.9205000,Lucknow,Uttar Pradesh,LMRC_RED,1,verified,UPMRC Official Network
+LKO_HSA,Hussainganj,Hussainganj Crossing,26.8398000,77.9284000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_SCH,Sachivalaya,UP Civil Secretariat,26.8442000,80.9362000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_HZG,Hazratganj,Hazratganj Shopping,26.8492000,80.9428000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_KDM,KD Singh Babu Stadium,KD Singh Babu Stadium,26.8586000,80.9412000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_UVV,Vishwavidyalaya Lucknow,Lucknow University,26.8674000,80.9386000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_ITJ,IT College,Isabella Thoburn College,26.8742000,80.9434000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_BDN,Badshahnagar,Badshahnagar Railway Station Metro,26.8764000,80.9586000,Lucknow,Uttar Pradesh,LMRC_RED,1,verified,UPMRC Official Network
+LKO_LKN,Lekhraj Market,Lekhraj Market Indira Nagar,26.8784000,80.9698000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_BTN,Bhootnath Market,Bhootnath Indira Nagar,26.8812000,80.9784000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_IDN,Indira Nagar,Indira Nagar Lucknow,26.8834000,80.9862000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+LKO_MSP,Munshi Pulia,Munshi Pulia Terminal,26.8856000,80.9934000,Lucknow,Uttar Pradesh,LMRC_RED,0,verified,UPMRC Official Network
+KNP_IIT,IIT Kanpur,IIT Kanpur Campus Gate,26.5186000,80.2335000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_KLY,Kalyanpur,Kalyanpur Railway Crossing,26.4952000,80.2587000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_SPM,SPM Hospital,SPM Hospital Kalyanpur,26.4912000,80.2684000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_CSJ,CSJM University,Kanpur University,26.4864000,80.2786000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_GNR,Gurudev Chauraha,Gurudev Crossing,26.4812000,80.2894000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_GNP,Geeta Nagar,Geeta Nagar Kanpur,26.4786000,80.2986000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_RWP,Rawatpur,Rawatpur Railway Station Metro,26.4764000,80.3064000,Kanpur,Uttar Pradesh,KMRC_ORANGE,1,verified,UPMRC Official Network
+KNP_LLR,LLR Hospital,Hallet Hospital,26.4752000,80.3114000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+KNP_MJL,Motijheel,Moti Jheel Kanpur,26.4764000,80.3168000,Kanpur,Uttar Pradesh,KMRC_ORANGE,0,verified,UPMRC Official Network
+AGR_TEG,Taj East Gate,Taj East Gate Metro,27.1624000,78.0583000,Agra,Uttar Pradesh,AMRC_YELLOW,0,verified,UPMRC Official Network
+AGR_CSG,Captain Shubham Gupta,Fatehabad Road,27.1664000,78.0498000,Agra,Uttar Pradesh,AMRC_YELLOW,0,verified,UPMRC Official Network
+AGR_FBR,Fatehabad Road,Fatehabad Road Agra,27.1698000,78.0436000,Agra,Uttar Pradesh,AMRC_YELLOW,0,verified,UPMRC Official Network
+AGR_TJM,Taj Mahal,Taj Mahal Western Gate Metro,27.1725000,78.0375000,Agra,Uttar Pradesh,AMRC_YELLOW,0,verified,UPMRC Official Network
+AGR_AGF,Agra Fort,Agra Fort Railway Metro,27.1784000,78.0264000,Agra,Uttar Pradesh,AMRC_YELLOW,1,verified,UPMRC Official Network
+AGR_MKM,Mankameshwar Mandir,Jama Masjid Agra,27.1815000,78.0162000,Agra,Uttar Pradesh,AMRC_YELLOW,0,verified,UPMRC Official Network
+MM_PRT,Partapur,Partapur Meerut Metro,28.9328000,77.6492000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro
+MM_RTH,Rithani,Rithani Meerut Metro,28.9453000,77.6565000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro
+MM_BRH,Brahmapuri,Brahampuri Meerut Metro,28.9692000,77.6748000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro
+MM_MCT,Meerut Central Metro,Football Chowk Local Metro,28.9785000,77.6892000,Meerut,Uttar Pradesh,MM_LINE1,1,verified,UPMRC Meerut Metro
+MM_BHS,Bhaisali,Bhaisali Bus Stand Metro,28.9882000,77.7011000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro
+MM_MES,MES Colony,MES Colony Meerut Metro,29.0123000,77.7125000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro
+MM_DRL,Daurli,Daurli Meerut Metro,29.0289000,77.7188000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro
+MM_MRN,Meerut North Metro,Pawanpuri Local Metro,29.0435000,77.7242000,Meerut,Uttar Pradesh,MM_LINE1,1,verified,UPMRC Meerut Metro
+MM_MDP_DEP,Modipuram Depot,Modipuram Depot Metro,29.0765000,77.7368000,Meerut,Uttar Pradesh,MM_LINE1,0,verified,UPMRC Meerut Metro

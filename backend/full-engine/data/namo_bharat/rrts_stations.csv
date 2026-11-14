@@ -1,0 +1,17 @@
+code,name,alternate_names,latitude,longitude,city,state,line,is_interchange,operational_status,effective_date,source
+RRTS_SKK,Sarai Kale Khan,Hazrat Nizamuddin RRTS,28.5886000,77.2562000,Delhi,Delhi,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_NAN,New Ashok Nagar,New Ashok Nagar RRTS,28.5947000,77.3061000,Delhi,Delhi,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_ANV,Anand Vihar,Anand Vihar RRTS Hub,28.6475000,77.3155000,Delhi,Delhi,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_SHB,Sahibabad,Sahibabad RRTS Station,28.6728000,77.3614000,Ghaziabad,Uttar Pradesh,NCRTC_DGM,0,operational,2023-10-21,NCRTC Priority Section Opening
+RRTS_GZB,Ghaziabad,Ghaziabad Central RRTS,28.6742000,77.4336000,Ghaziabad,Uttar Pradesh,NCRTC_DGM,1,operational,2023-10-21,NCRTC Priority Section Opening
+RRTS_GLD,Guldhar,Guldhar RRTS,28.6947000,77.4641000,Ghaziabad,Uttar Pradesh,NCRTC_DGM,0,operational,2023-10-21,NCRTC Priority Section Opening
+RRTS_DUH,Duhai,Duhai RRTS Junction,28.7364000,77.4912000,Ghaziabad,Uttar Pradesh,NCRTC_DGM,1,operational,2023-10-21,NCRTC Priority Section Opening
+RRTS_MDN,Muradnagar,Murad Nagar RRTS,28.7831000,77.5083000,Ghaziabad,Uttar Pradesh,NCRTC_DGM,0,operational,2024-03-06,NCRTC Section-2 Opening
+RRTS_MNS,Modinagar South,Modi Nagar South RRTS,28.8256000,77.5517000,Modinagar,Uttar Pradesh,NCRTC_DGM,0,operational,2024-03-06,NCRTC Section-2 Opening
+RRTS_MNN,Modinagar North,Modi Nagar North RRTS,28.8589000,77.5852000,Modinagar,Uttar Pradesh,NCRTC_DGM,0,operational,2024-03-06,NCRTC Section-2 Opening
+RRTS_MRS,Meerut South,Bhudbaral Meerut South,28.9175000,77.6386000,Meerut,Uttar Pradesh,NCRTC_DGM,1,operational,2024-08-18,NCRTC Section-3 Opening (Meerut South)
+RRTS_SHT,Shatabdi Nagar,Shatabdi Nagar Meerut,28.9567000,77.6621000,Meerut,Uttar Pradesh,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_MCT,Meerut Central,Football Chowk Meerut,28.9785000,77.6892000,Meerut,Uttar Pradesh,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_BGP,Begumpul,Begum Bridge Meerut,28.9958000,77.7064000,Meerut,Uttar Pradesh,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_MRN,Meerut North,Pawanpuri Meerut,29.0435000,77.7242000,Meerut,Uttar Pradesh,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)
+RRTS_MDP,Modipuram,Modipuram Northern Terminal,29.0682000,77.7321000,Meerut,Uttar Pradesh,NCRTC_DGM,1,operational,2026-02-22,NCRTC Full Corridor Inauguration (2026-02-22)

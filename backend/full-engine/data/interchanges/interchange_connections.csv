@@ -1,0 +1,22 @@
+from_code,to_code,distance_km,estimated_time_min,transfer_type,data_status
+DEL_NDLS,NDLS,0.15,3.0,Pedestrian Foot Overbridge,verified
+DEL_ANVT,ANVT,0.10,2.0,Pedestrian FOB Link,verified
+DEL_ANVT,DTC_ANVT,0.15,3.0,ISBT Pedestrian Concourse,verified
+DEL_ANVT,RRTS_ANV,0.12,3.0,Multimodal Underground Link,verified
+DEL_KG,DTC_KG,0.10,2.0,ISBT Concourse Walk,verified
+DEL_SKK_M,NZM,0.25,5.0,Travelator FOB,verified
+DEL_SKK_M,DTC_SKK,0.15,3.0,ISBT Skywalk,verified
+DEL_SKK_M,RRTS_SKK,0.15,3.0,Multimodal Integration Hub,verified
+DEL_AIM,DTC_AIIMS,0.05,1.0,Surface Crossing / Sub-way,verified
+DEL_SVS,DTC_CP,0.10,2.0,Shivaji Stadium Plaza Link,verified
+DEL_DHK_A,DTC_DHAULA,0.15,3.0,Skywalk / FOB,verified
+DEL_NHP,DTC_NEHRU,0.10,2.0,Outer Ring Road Skywalk,verified
+LKO_CHR,LKO,0.10,2.0,Railway Station Concourse,verified
+LKO_CHR,LJN,0.15,3.0,Metro to Lucknow Junction Concourse Walk,verified
+LJN,LKO,0.15,3.0,Station Complex Inter-Platform Overbridge,verified
+LKO_ABS,UPSRTC_ALB,0.15,3.0,Alambagh ISBT Concourse,verified
+AGR_AGF,AF,0.30,4.0,Pedestrian Concourse Link,verified
+DEL_NAN,RRTS_NAN,0.09,2.0,NCRTC Dedicated Foot Over Bridge,verified
+RRTS_SKK,NZM,0.20,4.0,Multimodal Dedicated Travelator Skywalk,verified
+RRTS_MCT,MM_MCT,0.05,1.0,Integrated Station Concourse Transfer,verified
+RRTS_MRN,MM_MRN,0.05,1.0,Integrated Station Concourse Transfer,verified

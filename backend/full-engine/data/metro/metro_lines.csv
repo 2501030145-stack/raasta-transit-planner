@@ -1,0 +1,17 @@
+code,name,operator_code,transport_type,color,region,is_active
+DMRC_RED,Red Line,DMRC,metro,#E53935,Delhi NCR,1
+DMRC_YELLOW,Yellow Line,DMRC,metro,#FDD835,Delhi NCR,1
+DMRC_BLUE_MAIN,Blue Line (Main),DMRC,metro,#1E88E5,Delhi NCR,1
+DMRC_BLUE_BRANCH,Blue Line (Branch),DMRC,metro,#1E88E5,Delhi NCR,1
+DMRC_VIOLET,Violet Line,DMRC,metro,#8E24AA,Delhi NCR,1
+DMRC_PINK,Pink Line,DMRC,metro,#F06292,Delhi NCR,1
+DMRC_MAGENTA,Magenta Line,DMRC,metro,#D81B60,Delhi NCR,1
+DMRC_GREEN,Green Line,DMRC,metro,#43A047,Delhi NCR,1
+DMRC_AIRPORT,Airport Express Line,DMRC,metro,#FB8C00,Delhi NCR,1
+DMRC_GREY,Grey Line,DMRC,metro,#757575,Delhi NCR,1
+RM_GURUGRAM,Rapid Metro Gurugram,GMCBL,metro,#3949AB,Gurugram,1
+NMRC_AQUA,Aqua Line,NMRC,metro,#00ACC1,Noida Greater Noida,1
+LMRC_RED,North-South Corridor (Red Line),UPMRC,metro,#E53935,Lucknow,1
+KMRC_ORANGE,Orange Line (IITK to Motijheel),UPMRC,metro,#FB8C00,Kanpur,1
+AMRC_YELLOW,Yellow Line (Priority Corridor),UPMRC,metro,#FDD835,Agra,1
+MM_LINE1,Meerut Metro Line 1,UPMRC,metro,#00897B,Meerut,1

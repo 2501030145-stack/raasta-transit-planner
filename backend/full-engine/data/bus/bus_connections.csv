@@ -1,0 +1,11 @@
+from_code,to_code,line_name,distance_km,estimated_time_min,bus_type,data_status
+DTC_MEHRAULI,DTC_AIIMS,Route 502,8.5,25.0,Non-AC/AC,verified
+DTC_AIIMS,DTC_CP,Route 502,6.0,18.0,Non-AC/AC,verified
+DTC_CP,DTC_KG,Route 502,4.5,15.0,Non-AC/AC,verified
+DTC_SKK,DTC_AIIMS,Mudrika Sewa (TMS),7.0,20.0,Non-AC/AC,verified
+DTC_AIIMS,DTC_DHAULA,Mudrika Sewa (TMS),6.5,18.0,Non-AC/AC,verified
+DTC_DHAULA,DTC_CP,Route 620,8.0,22.0,Non-AC/AC,verified
+DTC_SKK,DTC_NEHRU,Route 764,5.0,15.0,Cluster,verified
+DTC_ANVT,DTC_NEHRU,Route 534,14.0,40.0,Non-AC/AC,verified
+UPSRTC_ALB,UPSRTC_JHK,UPSRTC Intercity,75.0,90.0,Ordinary/Janrath,verified
+

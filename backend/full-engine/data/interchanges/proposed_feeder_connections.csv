@@ -1,0 +1,4 @@
+from_code,to_code,distance_km,estimated_time_min,transfer_type,data_status,notes
+GZB_SHS,GZB,1.20,15.0,City Auto/E-Rickshaw Link,unverified,Road transit connection between Shaheed Sthal Metro and Ghaziabad Railway Station. Not a pedestrian facility. Deferred pending scheduled feeder service confirmation.
+GZB_SHS,RRTS_GZB,0.80,10.0,Feeder Bus / City Auto,unverified,Feeder route between Shaheed Sthal Red Line and Ghaziabad RRTS Station. Road transit link. Deferred pending scheduled feeder confirmation.
+

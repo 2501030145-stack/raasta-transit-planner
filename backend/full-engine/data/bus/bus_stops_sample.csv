@@ -1,0 +1,12 @@
+stop_id,stop_name,latitude,longitude,city,state,operator,is_interchange,data_status
+DTC_SKK,Sarai Kale Khan ISBT,28.5880000,77.2555000,Delhi,Delhi,DTC,1,verified
+DTC_KG,Kashmere Gate ISBT,28.6690000,77.2280000,Delhi,Delhi,DTC,1,verified
+DTC_ANVT,Anand Vihar ISBT,28.6480000,77.3165000,Delhi,Delhi,DTC,1,verified
+DTC_CP,Shivaji Stadium Terminal,28.6295000,77.2135000,Delhi,Delhi,DTC,1,verified
+DTC_AIIMS,AIIMS Bus Stop,28.5685000,77.2105000,Delhi,Delhi,DTC,1,verified
+DTC_DHAULA,Dhaula Kuan Bus Stop,28.5925000,77.1610000,Delhi,Delhi,DTC,1,verified
+DTC_NEHRU,Nehru Place Terminal,28.5490000,77.2515000,Delhi,Delhi,DTC,1,verified
+DTC_MEHRAULI,Mehrauli Terminal,28.5180000,77.1850000,Delhi,Delhi,DTC,0,verified
+UPSRTC_ALB,Lucknow Alambagh Bus Station,26.8150000,80.9020000,Lucknow,Uttar Pradesh,UPSRTC,1,verified
+UPSRTC_JHK,Kanpur Jhakarkati Bus Station,26.4510000,80.3420000,Kanpur,Uttar Pradesh,UPSRTC,1,verified
+

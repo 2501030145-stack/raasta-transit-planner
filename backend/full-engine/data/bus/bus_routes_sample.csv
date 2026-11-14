@@ -1,0 +1,8 @@
+route_short_name,route_long_name,operator,bus_type,origin,destination
+502,Mehrauli to Old Delhi Railway Station,DTC,Non-AC/AC,Mehrauli Terminal,Old Delhi Railway Station
+620,Shivaji Stadium to Vasant Kunj,DTC,Non-AC/AC,Shivaji Stadium Terminal,Vasant Kunj Sector A
+534,Anand Vihar ISBT to Mehrauli,DTC,Non-AC/AC,Anand Vihar ISBT,Mehrauli Terminal
+764,Nehru Place to Najafgarh,DIMTS,Cluster,Nehru Place Terminal,Najafgarh Terminal
+TMS,Mudrika Sewa (Ring Road Ring),DTC,Non-AC/AC,Sarai Kale Khan ISBT,Sarai Kale Khan ISBT
+UPSRTC_LKO_CNB,Lucknow Alambagh to Kanpur Jhakarkati,UPSRTC,Ordinary/AC,Lucknow Alambagh,Kanpur Jhakarkati
+

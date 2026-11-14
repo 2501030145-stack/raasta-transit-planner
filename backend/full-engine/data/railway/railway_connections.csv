@@ -1,0 +1,24 @@
+from_code,to_code,corridor,distance_km,estimated_time_min,train_sample,data_status
+NDLS,GZB,Main Line,25.0,35.0,12004 Lucknow Shatabdi,verified
+DLI,GZB,Main Line,20.0,30.0,14042 Mussoorie Exp,verified
+NZM,GZB,Main Line,23.0,32.0,12423 Dibrugarh Rajdhani,verified
+ANVT,GZB,Main Line,13.0,20.0,12558 Sapt Kranti Exp,verified
+DEE,DLI,Delhi Local/Rewari,4.2,12.0,14042 Mussoorie Exp / 04434 Shuttle,verified
+GZB,MTC,Delhi-Meerut,47.0,45.0,12017 Dehradun Shatabdi,verified
+MTC,MUT,Delhi-Meerut,5.0,7.0,12017 Dehradun Shatabdi,verified
+GZB,ALJN,Delhi-Kanpur,106.0,85.0,12004 Lucknow Shatabdi,verified
+ALJN,TDL,Delhi-Kanpur,78.0,60.0,12004 Lucknow Shatabdi,verified
+TDL,CNB,Delhi-Kanpur,231.0,160.0,12004 Lucknow Shatabdi,verified
+CNB,LKO,Kanpur-Lucknow,72.0,70.0,12004 Lucknow Shatabdi,verified
+CNB,LJN,Kanpur-Lucknow MEMU,72.0,85.0,64201 / 04295 MEMU,verified
+LKO,AYC,Lucknow-Ayodhya,128.0,110.0,22426 Vande Bharat Exp,verified
+AYC,AY,Lucknow-Ayodhya,8.0,12.0,22426 Vande Bharat Exp,verified
+CNB,PRYJ,Kanpur-Prayagraj,194.0,130.0,22436 Vande Bharat Exp,verified
+PRYJ,BSB,Prayagraj-Varanasi,124.0,120.0,22436 Vande Bharat Exp,verified
+GZB,MB,Delhi-Moradabad,141.0,120.0,12230 Lucknow Mail,verified
+MB,BE,Moradabad-Bareilly,90.0,75.0,12230 Lucknow Mail,verified
+BE,LKO,Bareilly-Lucknow,235.0,210.0,12230 Lucknow Mail,verified
+NDLS,MTJ,Delhi-Agra,141.0,95.0,12002 Bhopal Shatabdi,verified
+MTJ,AGC,Delhi-Agra,54.0,40.0,12002 Bhopal Shatabdi,verified
+AGC,AF,Agra Local,4.0,10.0,Local Shuttles,verified
+LKO,GKP,Lucknow-Gorakhpur,270.0,240.0,12556 Gorakhdham Exp,verified

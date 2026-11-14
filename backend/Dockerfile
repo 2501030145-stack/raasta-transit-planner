@@ -1,27 +1,37 @@
-FROM alpine:3.20 AS build
+FROM debian:bookworm-slim AS build
 
-RUN apk add --no-cache build-base cmake pkgconf mariadb-connector-c-dev
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    libcpp-httplib-dev \
+    nlohmann-json3-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
+COPY backend/full-engine/ ./raasta-backend/
 
-COPY backend ./backend
-COPY data ./data
+RUN cmake -S raasta-backend -B build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DRAASTA_ENABLE_MYSQL=OFF \
+    -DRAASTA_BUILD_TESTS=OFF \
+    && cmake --build build --target raasta-server -j2
 
-RUN cmake -S backend -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j2
+FROM debian:bookworm-slim
 
-FROM alpine:3.20
-
-RUN apk add --no-cache libstdc++ libgcc mariadb-connector-c
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libstdc++6 \
+    libcpp-httplib0.11 \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY --from=build /src/build/raasta-api ./raasta-api
-COPY data ./data
+COPY --from=build /src/build/raasta-server ./raasta-server
+COPY backend/full-engine/data ./data
 
 ENV PORT=8080
-ENV RAASTA_DEMO_DATA=true
-ENV RAASTA_DATA_FILE=/app/data/network.json
+ENV SERVER_PORT=8080
+ENV DATA_DIR=/app/data
 
 EXPOSE 8080
 
-CMD ["./raasta-api"]
+CMD ["./raasta-server"]
