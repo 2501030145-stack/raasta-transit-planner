@@ -2496,3 +2496,85 @@ button.clay-pressed:not(:disabled) { transform:translateY(5px) scale(.99) !impor
 :root[data-theme="light"] #planner-view .route-card * {
   opacity:1 !important;
 }
+
+/* RAASTA 4.5 — light-mode route planner contrast refinement */
+:root[data-theme="light"] #planner-view .route-card .metric b,
+:root[data-theme="light"] #planner-view .route-card .metric-value {
+  color: #20163f !important;
+  font-weight: 700 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .metric span,
+:root[data-theme="light"] #planner-view .route-card .route-card-tag,
+:root[data-theme="light"] #planner-view .route-card .transfer-chip {
+  color: #49356f !important;
+  opacity: 1 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .mode-chip {
+  color: #302052 !important;
+  background: #eee8fb !important;
+  border: 1px solid #927cbd !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .timeline-stop,
+:root[data-theme="light"] #planner-view .route-card .timeline-stop span {
+  color: #302052 !important;
+  opacity: 1 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .timeline-stop i {
+  background: #f8f5ff !important;
+  border-color: #6847c7 !important;
+}
+
+:root[data-theme="light"] #planner-view .station-field select:focus,
+:root[data-theme="light"] #planner-view .criterion:focus-visible {
+  outline: 2px solid #5636a8 !important;
+  outline-offset: 2px !important;
+}
+
+/* RAASTA — FINAL LIGHT MODE ROUTE TIMELINE CONTRAST FIX */
+:root[data-theme="light"] #planner-view .route-card,
+:root[data-theme="light"] #planner-view .route-card * {
+  opacity: 1 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .route-timeline {
+  background: #e8e0f8 !important;
+  border-top: 1px solid #9883c5 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .timeline-stop,
+:root[data-theme="light"] #planner-view .route-card .timeline-stop span,
+:root[data-theme="light"] #planner-view .route-card .timeline-stop span:last-child {
+  color: #241744 !important;
+  font-weight: 600 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .timeline-stop i {
+  background: #ffffff !important;
+  border: 2px solid #5936a5 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .timeline-stop:not(:last-child)::before {
+  background: #795eae !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .route-modes,
+:root[data-theme="light"] #planner-view .route-card .route-modes * {
+  color: #302052 !important;
+  opacity: 1 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .mode-chip {
+  background: #ffffff !important;
+  color: #302052 !important;
+  border: 1px solid #795eae !important;
+  font-weight: 600 !important;
+}
+
+:root[data-theme="light"] #planner-view .route-card .transfer-chip {
+  color: #653b16 !important;
+  font-weight: 700 !important;
+}
