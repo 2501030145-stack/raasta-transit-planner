@@ -1,0 +1,11 @@
+{
+  "name": "raasta-transit-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Indian transit route-optimization demonstrator",
+  "scripts": {
+    "test": "node tests/routes.test.js && node tests/route-service.test.mjs",
+    "start": "node server.js",
+    "serve": "node server.js"
+  }
+}

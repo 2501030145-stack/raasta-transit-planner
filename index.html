@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <meta name="description" content="Raasta is an intelligent mobility and public transport route-planning platform, designed to grow across India." />
+  <title>Raasta — Move through more.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="topline"><span><i class="status-dot"></i> NETWORK STATUS <b>DEMO NETWORK</b></span><span class="topline-right">INDIA&nbsp; / &nbsp;EXPANDABLE NETWORK <span class="coordinates">PAN-INDIA VISION</span></span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Raasta home"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 23 15 9l10 14M10 17h14"/><circle cx="6" cy="23" r="2.4"/><circle cx="15" cy="9" r="2.4"/><circle cx="25" cy="23" r="2.4"/></svg></span><span>RAASTA<small>ROUTE INTELLIGENCE</small></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><button class="nav-link active" data-view="home">Overview</button><button class="nav-link" data-view="planner">Route planner</button><button class="nav-link" data-view="network">Network</button><button class="nav-link" data-view="admin">Admin <span class="nav-lock">DEMO</span></button></nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">DARK</span></button>
+    <button class="header-action" data-view="planner">Plan a journey <span>↗</span></button>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="view active" id="home-view" aria-label="Overview">
+      <div class="hero">
+        <div class="hero-art" aria-hidden="true"></div><div class="hero-grid"></div>
+        <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-mark"></span> URBAN MOVEMENT SYSTEM <span class="eyebrow-line"></span> 01 / 03</div>
+          <h1>MOVE WITH<br />THE <em>NETWORK.</em></h1>
+          <p>A connected view of the places, lines and journeys<br />that make a city move.</p>
+          <button class="button button-primary" data-view="planner">EXPLORE A ROUTE <span>↗</span></button>
+        </div>
+        <div class="hero-coordinate">28° 37′ 12.4″ N<br />77° 12′ 58.1″ E <span>NEW DELHI · INDIA</span></div>
+        <div class="hero-route-note"><span class="route-dash"></span><span>CITY MOVEMENT<br /><b>MADE LEGIBLE.</b></span><span class="note-index">RA / 001</span></div>
+        <div class="hero-bottom"><span>RAASTA / URBAN MOBILITY</span><span class="scroll-cue">EXPLORE THE SYSTEM <span>↓</span></span><span>INDIA · 2026</span></div>
+      </div>
+      <section class="intro-section section-pad"><div class="section-index">01 — WHY RAASTA</div><div class="intro-main"><h2>A city isn't<br />a straight line.</h2><div class="intro-aside"><p>Every journey holds options. Raasta puts the network in view, then finds a way through that fits your priorities.</p><button class="text-link" data-view="planner">FIND YOUR WAY <span>↗</span></button></div></div><div class="principle-strip"><div><span>01 / COMPARE</span><b>See the alternatives.</b></div><div><span>02 / CHOOSE</span><b>Time, distance, fare or stops.</b></div><div><span>03 / GO</span><b>Follow every connection.</b></div></div></section>
+      <section class="preview-section"><div class="preview-copy"><div class="section-index">02 — THE NETWORK</div><h2>One map.<br /><em>Many ways.</em></h2><p>Metro lines and regional links across the capital region—brought into one view.</p><button class="button button-outline" data-view="planner">OPEN THE PLANNER <span>↗</span></button></div><div class="preview-map"><div class="preview-map-grid"></div><svg viewBox="0 0 620 420" role="img" aria-label="Illustrative network diagram"><path class="map-river" d="M428 8C385 78 465 99 404 155S454 251 387 302 408 371 363 414"/><path class="network-line orange-line" d="M90 330 176 270 223 205 340 170 445 120 530 65"/><path class="network-line cyan-line" d="M116 78 223 205 280 290 387 302 500 330"/><path class="network-line green-line" d="M176 270 280 290 387 302 445 120"/><g class="map-nodes"><circle cx="90" cy="330" r="6"/><circle cx="176" cy="270" r="6"/><circle cx="223" cy="205" r="8"/><circle cx="340" cy="170" r="6"/><circle cx="445" cy="120" r="6"/><circle cx="530" cy="65" r="6"/><circle cx="116" cy="78" r="6"/><circle cx="280" cy="290" r="6"/><circle cx="387" cy="302" r="6"/><circle cx="500" cy="330" r="6"/></g><g class="map-labels"><text x="193" y="192">RAJIV CHOWK</text><text x="352" y="160">ANAND VIHAR</text><text x="457" y="110">NOIDA</text><text x="106" y="358">GURUGRAM</text></g></svg><div class="map-stamp">NETWORK<br />NOT TO SCALE</div></div></section>
+      <section class="honesty-band"><span class="eyebrow-mark"></span><p>BUILT TO HELP YOU PLAN.<br /><b>NOT TO PRETEND WE KNOW EVERYTHING.</b></p><span class="band-note">A CURATED DEMO NETWORK · NOT A LIVE FEED</span></section>
+    </section>
+
+    <section class="view planner-view" id="planner-view" aria-label="Route planner">
+      <div class="planner-heading"><div><div class="section-index">ROUTE INTELLIGENCE / 02</div><h1>Find your <em>way.</em></h1></div><div class="planner-heading-note"><span class="status-dot"></span> LIVE ROUTING ENGINE<br /><span>Routes are calculated by the Raasta backend.</span></div></div>
+      <div class="planner-layout">
+        <aside class="journey-panel panel">
+          <div class="panel-top"><span>PLAN A JOURNEY</span><span class="panel-code">01 — INPUT</span></div>
+          <label class="field-label" for="origin">FROM <span>01</span></label>
+          <div class="station-field"><span class="field-origin"></span><select id="origin" aria-label="Starting station"></select></div>
+          <div class="field-connector"></div>
+          <label class="field-label" for="destination">TO <span>02</span></label>
+          <div class="station-field"><span class="field-destination"></span><select id="destination" aria-label="Destination station"></select></div>
+          <button id="swap-stations" class="swap-button" aria-label="Swap origin and destination">↕</button>
+          <div class="preference-label">OPTIMIZE BY <span>SELECT ONE</span></div>
+          <div class="criteria-grid" role="group" aria-label="Route optimization criterion">
+            <button class="criterion selected" data-criterion="time"><span>◷</span><b>Fastest</b><small>TIME</small></button>
+            <button class="criterion" data-criterion="distance"><span>↔</span><b>Shortest</b><small>DISTANCE</small></button>
+            <button class="criterion" data-criterion="fare"><span>₹</span><b>Lowest fare</b><small>PRICE</small></button>
+            <button class="criterion" data-criterion="stops"><span>⊙</span><b>Fewest stops</b><small>STOPS</small></button>
+          </div>
+          <button class="button button-primary find-button" id="find-routes">FIND ROUTES <span>↗</span></button>
+          <div class="panel-footnote"><span class="mini-shield">i</span><span>Live backend estimates. Fares and journey times may vary.</span></div>
+        </aside>
+        <section class="map-column"><div class="map-toolbar"><div class="map-title"><span class="live-pip"></span> INDIA <span>/</span> CURRENT SAMPLE NETWORK</div><div class="map-tools"><button class="map-view-button active" data-map-view="regional">REGIONAL</button><button class="map-view-button" data-map-view="india">INDIA</button><button class="map-view-button" data-map-view="detail">CITY</button><select id="map-layer" aria-label="Map layer"><option value="terrain">Terrain</option><option value="street">OSM Streets</option></select></div></div><div id="map" aria-label="Interactive map of the current sample transport network"></div><div class="map-legend"><span><i class="legend-dot metro"></i>METRO</span><span><i class="legend-dot rail"></i>REGIONAL RAIL</span><span><i class="legend-dot selected"></i>SELECTED GRAPH LINK · SCHEMATIC</span><span class="map-scale">APPROX. STATION LOCATIONS · NOT TRACK GEOMETRY</span></div><div class="map-unavailable" id="map-fallback" hidden>Map tiles are unavailable. Route calculations and approximate sample station locations remain available; connector lines are schematic links, not track geometry.</div></section>
+        <aside class="results-panel panel"><div class="results-head"><div><span class="panel-top-label">ROUTE OPTIONS</span><h2 id="results-title">Your journey</h2></div><span class="results-count" id="route-count">—</span></div><div class="route-summary" id="route-summary"><div class="summary-line"><span>SELECT A ROUTE</span><span>FROM THE LIST</span></div><p>Choose your stations and compare ways to get there.</p></div><div id="route-list" class="route-list"><div class="empty-routes"><span class="empty-cross">＋</span><b>Routes appear here.</b><span>Choose an origin and destination to get started.</span></div></div><div class="results-disclaimer">LIVE BACKEND ROUTE ESTIMATES<br />FARE STATUS SHOWN PER ROUTE</div></aside>
+      </div>
+    </section>
+
+    <section class="view network-view" id="network-view" aria-label="Network explorer">
+      <div class="planner-heading"><div><div class="section-index">NETWORK INTELLIGENCE / 03</div><h1>Know the <em>network.</em></h1></div><div class="planner-heading-note">An expandable network prototype. Current station coverage is limited to the available sample dataset.</div></div>
+      <div class="network-controls panel"><div class="search-wrap"><span>⌕</span><input id="station-search" type="search" placeholder="Search stations, cities, lines…" aria-label="Search stations, cities, and lines" /></div><div class="filter-wrap"><span>MODE</span><select id="mode-filter" aria-label="Filter by transport mode"><option value="all">All modes</option></select></div><div class="network-stat"><span>STATIONS</span><b id="station-total">—</b></div><div class="network-stat"><span>LINES</span><b id="line-total">—</b></div></div>
+      <div class="network-content"><section class="network-list-panel panel"><div class="panel-top"><span>STATION DIRECTORY</span><span class="panel-code" id="station-result-count">—</span></div><div id="network-stations" class="network-stations"></div></section><section class="network-detail panel"><div class="panel-top"><span>STATION PROFILE</span><span class="panel-code">SELECT A NODE</span></div><div id="network-mini-map" aria-label="Geographic connections from the selected station"></div><div id="station-detail" class="station-detail-empty"><span class="detail-orbit">◎</span><h2>Every point has<br />a connection.</h2><p>Select a station to see its lines and neighbouring stops.</p></div></section></div>
+    </section>
+
+    <section class="view admin-view" id="admin-view" aria-label="Administration demo">
+      <div class="planner-heading"><div><div class="section-index">SYSTEM CONTROL / 04</div><h1>Network <em>studio.</em></h1></div><div class="planner-heading-note">DEMO MODE · Changes remain in browser memory only.</div></div>
+      <div class="admin-alert"><span>!</span><div><b>Demonstration interface only</b><p>This login is not secure authentication. Do not enter a real password. Changes are temporary and are not saved to MySQL.</p></div></div>
+      <div class="admin-layout"><section class="admin-login panel" id="admin-gate"><div class="panel-top"><span>DEMO ACCESS</span><span class="panel-code">NO CREDENTIALS STORED</span></div><h2>Enter the<br /><em>studio.</em></h2><p>Use any non-empty demo name to open the local network editor. This does not authenticate a real admin account.</p><label for="demo-name">DEMO NAME</label><input id="demo-name" type="text" autocomplete="off" placeholder="e.g. Network editor" /><button class="button button-primary" id="demo-login">OPEN DEMO STUDIO <span>↗</span></button></section>
+      <section class="admin-workspace panel" id="admin-workspace" hidden>
+        <div class="panel-top"><span>NETWORK EDITOR</span><button class="text-link" id="admin-logout">CLOSE DEMO ×</button></div>
+        <div class="admin-stats" id="admin-stats"></div>
+        <h3>ADD A SAMPLE STATION</h3>
+        <form id="station-form" class="station-form"><input name="name" required placeholder="Station name" aria-label="New station name" /><input name="city" required placeholder="City / area" aria-label="City or area" /><input name="lat" required type="number" step="any" min="-90" max="90" placeholder="Latitude" aria-label="Latitude" /><input name="lng" required type="number" step="any" min="-180" max="180" placeholder="Longitude" aria-label="Longitude" /><select name="mode" aria-label="Transport mode"></select><button class="button button-primary" type="submit">ADD STATION +</button></form>
+        <div class="panel-top admin-table-head"><span>SAMPLE STATIONS</span><span class="panel-code">IN-MEMORY ONLY</span></div>
+        <div class="admin-table-scroll"><table><thead><tr><th>STATION</th><th>CITY</th><th>MODE</th><th>COORDINATES</th><th>ACTIONS</th></tr></thead><tbody id="admin-table"></tbody></table></div>
+        <h3 class="connection-title">ADD A SAMPLE CONNECTION</h3>
+        <form id="connection-form" class="connection-form"><select name="from" aria-label="Connection from station" required></select><select name="to" aria-label="Connection to station" required></select><select name="line" aria-label="Connection line" required></select><input name="distanceKm" type="number" min="0" step="0.1" placeholder="km" aria-label="Distance in kilometres" required /><input name="minutes" type="number" min="0" step="1" placeholder="min" aria-label="Travel time in minutes" required /><input name="fareInr" type="number" min="0" step="1" placeholder="₹ fare" aria-label="Fare in rupees" required /><button class="button button-primary" type="submit">ADD LINK +</button></form>
+        <div class="admin-table-scroll"><table><thead><tr><th>FROM</th><th>TO</th><th>LINE</th><th>KM / MIN / ₹</th><th>ACTION</th></tr></thead><tbody id="connection-table"></tbody></table></div>
+      </section></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-brand">RAASTA <span>ROUTE INTELLIGENCE</span></div><div>INDIA · EXPANDABLE NETWORK</div><div>PLANNING, NOT BOOKING.</div><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors · ODbL</a><a href="https://www.openstreetmap.org/fixthemap" target="_blank" rel="noreferrer">Report a map issue</a><div class="footer-mark">RA / 2026</div></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/app.js?v=20261113-3" defer></script>
+  <script src="/ui-effects.js" defer></script>
+</body>
+</html>

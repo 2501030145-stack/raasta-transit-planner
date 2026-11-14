@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "name": "Raasta NCR sample network",
+    "scope": "Curated demonstration sample for Delhi NCR and western Uttar Pradesh",
+    "isLive": false,
+    "dataNote": "Coordinates are approximate station positions for map visualization. Edge times, fares, and intermediate-stop counts are illustrative planning weights, not live schedules, official fare data, operator-verified stop counts, or complete network coverage. No cab or bike edges are configured."
+  },
+  "modes": ["Metro", "Regional rail"],
+  "lines": [
+    {"id":"yellow","name":"Yellow Line","mode":"Metro","color":"#f2c84b","operator":"Delhi Metro (sample)"},
+    {"id":"blue","name":"Blue Line","mode":"Metro","color":"#78b6ed","operator":"Delhi Metro (sample)"},
+    {"id":"red","name":"Red Line","mode":"Metro","color":"#ef796e","operator":"Delhi Metro (sample)"},
+    {"id":"rapid","name":"Delhi–Meerut RRTS sample","mode":"Regional rail","color":"#a1c78b","operator":"Regional rail (sample)"}
+  ],
+  "stations": [
+    {"id":"kashmere-gate","name":"Kashmere Gate","city":"Old Delhi","lat":28.6675,"lng":77.2282,"modes":["Metro"],"lines":["yellow","red"],"zone":"Delhi"},
+    {"id":"chandni-chowk","name":"Chandni Chowk","city":"Old Delhi","lat":28.6506,"lng":77.2303,"modes":["Metro"],"lines":["yellow"],"zone":"Delhi"},
+    {"id":"new-delhi","name":"New Delhi","city":"Central Delhi","lat":28.6432,"lng":77.2215,"modes":["Metro","Regional rail"],"lines":["yellow","rapid"],"zone":"Delhi"},
+    {"id":"rajiv-chowk","name":"Rajiv Chowk","city":"Connaught Place","lat":28.6328,"lng":77.2197,"modes":["Metro"],"lines":["yellow","blue"],"zone":"Delhi"},
+    {"id":"central-secretariat","name":"Central Secretariat","city":"Central Delhi","lat":28.6147,"lng":77.2119,"modes":["Metro"],"lines":["yellow"],"zone":"Delhi"},
+    {"id":"aiims","name":"AIIMS","city":"South Delhi","lat":28.5689,"lng":77.2072,"modes":["Metro"],"lines":["yellow"],"zone":"Delhi"},
+    {"id":"hauz-khas","name":"Hauz Khas","city":"South Delhi","lat":28.5433,"lng":77.2066,"modes":["Metro"],"lines":["yellow"],"zone":"Delhi"},
+    {"id":"millennium-city-centre","name":"Millennium City Centre Gurugram","city":"Gurugram","lat":28.4595,"lng":77.0725,"modes":["Metro"],"lines":["yellow"],"zone":"Haryana"},
+    {"id":"sikandarpur","name":"Sikandarpur","city":"Gurugram","lat":28.4818,"lng":77.0943,"modes":["Metro"],"lines":["yellow"],"zone":"Haryana"},
+    {"id":"botanical-garden","name":"Botanical Garden","city":"Noida","lat":28.5643,"lng":77.3344,"modes":["Metro"],"lines":["blue"],"zone":"Uttar Pradesh"},
+    {"id":"sector-18-noida","name":"Noida Sector 18","city":"Noida","lat":28.5708,"lng":77.3261,"modes":["Metro"],"lines":["blue"],"zone":"Uttar Pradesh"},
+    {"id":"noida-city-centre","name":"Noida City Centre","city":"Noida","lat":28.5745,"lng":77.3560,"modes":["Metro"],"lines":["blue"],"zone":"Uttar Pradesh"},
+    {"id":"anand-vihar","name":"Anand Vihar","city":"East Delhi","lat":28.6469,"lng":77.3160,"modes":["Metro","Regional rail"],"lines":["blue","rapid"],"zone":"Delhi"},
+    {"id":"kaushambi","name":"Kaushambi","city":"Ghaziabad","lat":28.6457,"lng":77.3240,"modes":["Metro"],"lines":["blue"],"zone":"Uttar Pradesh"},
+    {"id":"vaishali","name":"Vaishali","city":"Ghaziabad","lat":28.6492,"lng":77.3390,"modes":["Metro"],"lines":["blue"],"zone":"Uttar Pradesh"},
+    {"id":"ghaziabad","name":"Ghaziabad Junction","city":"Ghaziabad","lat":28.6435,"lng":77.4280,"modes":["Regional rail"],"lines":["rapid"],"zone":"Uttar Pradesh"},
+    {"id":"sahibabad","name":"Sahibabad","city":"Ghaziabad","lat":28.6730,"lng":77.3530,"modes":["Regional rail"],"lines":["rapid"],"zone":"Uttar Pradesh"},
+    {"id":"meerut-south","name":"Meerut South","city":"Meerut","lat":28.9510,"lng":77.6800,"modes":["Regional rail"],"lines":["rapid"],"zone":"Uttar Pradesh"},
+    {"id":"modinagar-north","name":"Modinagar North","city":"Modinagar","lat":28.8300,"lng":77.5800,"modes":["Regional rail"],"lines":["rapid"],"zone":"Uttar Pradesh"},
+    {"id":"modinagar-south","name":"Modinagar South","city":"Modinagar","lat":28.7650,"lng":77.5500,"modes":["Regional rail"],"lines":["rapid"],"zone":"Uttar Pradesh"}
+  ],
+  "connections": [
+    {"from":"kashmere-gate","to":"chandni-chowk","line":"yellow","distanceKm":1.8,"minutes":3,"fareInr":10,"stops":1},
+    {"from":"chandni-chowk","to":"new-delhi","line":"yellow","distanceKm":1.4,"minutes":3,"fareInr":10,"stops":1},
+    {"from":"new-delhi","to":"rajiv-chowk","line":"yellow","distanceKm":1.1,"minutes":2,"fareInr":10,"stops":1},
+    {"from":"rajiv-chowk","to":"central-secretariat","line":"yellow","distanceKm":2.8,"minutes":5,"fareInr":10,"stops":1},
+    {"from":"central-secretariat","to":"aiims","line":"yellow","distanceKm":4.5,"minutes":7,"fareInr":10,"stops":1},
+    {"from":"aiims","to":"hauz-khas","line":"yellow","distanceKm":3.0,"minutes":5,"fareInr":10,"stops":1},
+    {"from":"hauz-khas","to":"sikandarpur","line":"yellow","distanceKm":15.7,"minutes":24,"fareInr":40,"stops":7},
+    {"from":"sikandarpur","to":"millennium-city-centre","line":"yellow","distanceKm":3.7,"minutes":6,"fareInr":10,"stops":2},
+    {"from":"rajiv-chowk","to":"anand-vihar","line":"blue","distanceKm":8.8,"minutes":16,"fareInr":20,"stops":6},
+    {"from":"anand-vihar","to":"kaushambi","line":"blue","distanceKm":2.1,"minutes":4,"fareInr":10,"stops":1},
+    {"from":"kaushambi","to":"vaishali","line":"blue","distanceKm":2.0,"minutes":4,"fareInr":10,"stops":1},
+    {"from":"rajiv-chowk","to":"botanical-garden","line":"blue","distanceKm":13.1,"minutes":24,"fareInr":30,"stops":9},
+    {"from":"botanical-garden","to":"sector-18-noida","line":"blue","distanceKm":1.6,"minutes":3,"fareInr":10,"stops":1},
+    {"from":"sector-18-noida","to":"noida-city-centre","line":"blue","distanceKm":3.1,"minutes":6,"fareInr":10,"stops":2},
+    {"from":"new-delhi","to":"anand-vihar","line":"rapid","distanceKm":10.4,"minutes":12,"fareInr":30,"stops":1},
+    {"from":"anand-vihar","to":"sahibabad","line":"rapid","distanceKm":6.8,"minutes":7,"fareInr":20,"stops":1},
+    {"from":"sahibabad","to":"ghaziabad","line":"rapid","distanceKm":6.5,"minutes":7,"fareInr":20,"stops":1},
+    {"from":"ghaziabad","to":"modinagar-south","line":"rapid","distanceKm":18.0,"minutes":16,"fareInr":40,"stops":2},
+    {"from":"modinagar-south","to":"modinagar-north","line":"rapid","distanceKm":6.0,"minutes":6,"fareInr":20,"stops":1},
+    {"from":"modinagar-north","to":"meerut-south","line":"rapid","distanceKm":14.0,"minutes":13,"fareInr":30,"stops":2}
+  ]
+}
