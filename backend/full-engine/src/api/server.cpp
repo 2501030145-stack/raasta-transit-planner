@@ -353,12 +353,9 @@ void Server::registerRoutes() {
                 rreq.transport_modes = body["transport_modes"].get<std::vector<std::string>>();
             }
 
-            CheapestSearchGuard cheapest_guard;
-            if (!cheapest_guard.acquired()) {
-                res.status = 503;
-                res.set_content(R"({"success":false,"error":"A route comparison is already running. Please retry shortly."})", "application/json");
-                return;
-            }
+            // The compare endpoint is itself the user-requested operation.
+            // Do not reject it because a separate cheapest-route request is active;
+            // the route handler retains its own guard for standalone cheapest calls.
             auto results = route_service_->compareRoutes(rreq);
             json j;
             j["success"] = true;
