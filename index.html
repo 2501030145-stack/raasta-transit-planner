@@ -13,7 +13,19 @@
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
+<body>\n
+  <svg class="raasta-svg-filters" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="SquiCircleFilter" x="-12%" y="-12%" width="124%" height="124%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="softAlpha"/>
+        <feColorMatrix in="softAlpha" mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+          result="squircleAlpha"/>
+        <feComposite in="SourceGraphic" in2="squircleAlpha" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+
   <div class="topline"><span><i class="status-dot"></i> NETWORK STATUS <b>DEMO NETWORK</b></span><span class="topline-right">INDIA&nbsp; / &nbsp;EXPANDABLE NETWORK <span class="coordinates">PAN-INDIA VISION</span></span></div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Raasta home"><span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 23 15 9l10 14M10 17h14"/><circle cx="6" cy="23" r="2.4"/><circle cx="15" cy="9" r="2.4"/><circle cx="25" cy="23" r="2.4"/></svg></span><span>RAASTA<small>ROUTE INTELLIGENCE</small></span></a>
@@ -38,7 +50,34 @@
       </div>
       <section class="intro-section section-pad"><div class="section-index">01 — WHY RAASTA</div><div class="intro-main"><h2>A city isn't<br />a straight line.</h2><div class="intro-aside"><p>Every journey holds options. Raasta puts the network in view, then finds a way through that fits your priorities.</p><button class="text-link" data-view="planner">FIND YOUR WAY <span>↗</span></button></div></div><div class="principle-strip"><div><span>01 / COMPARE</span><b>See the alternatives.</b></div><div><span>02 / CHOOSE</span><b>Time, distance, fare or stops.</b></div><div><span>03 / GO</span><b>Follow every connection.</b></div></div></section>
       <section class="preview-section"><div class="preview-copy"><div class="section-index">02 — THE NETWORK</div><h2>One map.<br /><em>Many ways.</em></h2><p>Metro lines and regional links across the capital region—brought into one view.</p><button class="button button-outline" data-view="planner">OPEN THE PLANNER <span>↗</span></button></div><div class="preview-map"><div class="preview-map-grid"></div><svg viewBox="0 0 620 420" role="img" aria-label="Illustrative network diagram"><path class="map-river" d="M428 8C385 78 465 99 404 155S454 251 387 302 408 371 363 414"/><path class="network-line orange-line" d="M90 330 176 270 223 205 340 170 445 120 530 65"/><path class="network-line cyan-line" d="M116 78 223 205 280 290 387 302 500 330"/><path class="network-line green-line" d="M176 270 280 290 387 302 445 120"/><g class="map-nodes"><circle cx="90" cy="330" r="6"/><circle cx="176" cy="270" r="6"/><circle cx="223" cy="205" r="8"/><circle cx="340" cy="170" r="6"/><circle cx="445" cy="120" r="6"/><circle cx="530" cy="65" r="6"/><circle cx="116" cy="78" r="6"/><circle cx="280" cy="290" r="6"/><circle cx="387" cy="302" r="6"/><circle cx="500" cy="330" r="6"/></g><g class="map-labels"><text x="193" y="192">RAJIV CHOWK</text><text x="352" y="160">ANAND VIHAR</text><text x="457" y="110">NOIDA</text><text x="106" y="358">GURUGRAM</text></g></svg><div class="map-stamp">NETWORK<br />NOT TO SCALE</div></div></section>
-      <section class="honesty-band"><span class="eyebrow-mark"></span><p>BUILT TO HELP YOU PLAN.<br /><b>NOT TO PRETEND WE KNOW EVERYTHING.</b></p><span class="band-note">A CURATED DEMO NETWORK · NOT A LIVE FEED</span></section>
+
+      <section class="journey-stack-section" aria-label="How Raasta works">
+        <div class="journey-stack-intro">
+          <div class="section-index">03 — THE RAASTA METHOD</div>
+          <h2>Every journey.<br/><em>A clearer way through.</em></h2>
+          <p>Explore how Raasta turns a connected transport network into a journey you can compare and understand.</p>
+          <button class="button button-outline" data-view="planner">PLAN A JOURNEY <span>↗</span></button>
+        </div>
+        <div class="journey-stack" id="journey-stack">
+          <article class="journey-stack-card squircle-surface" style="--card-index:0;--card-tilt:-1.2deg">
+            <div class="stack-card-top"><span>01 / DISCOVER</span><span>RAASTA · ROUTE INTELLIGENCE</span></div>
+            <div class="stack-card-content"><div class="stack-card-symbol">◎</div><div><p class="stack-card-kicker">START WITH THE NETWORK</p><h3>See the city<br/><em>as one system.</em></h3><p>Explore stations, lines and available transport connections across the Delhi NCR network.</p></div></div>
+            <div class="stack-card-bottom"><span>STATIONS · LINES · CONNECTIONS</span><span>01 — 03</span></div>
+          </article>
+          <article class="journey-stack-card squircle-surface" style="--card-index:1;--card-tilt:1deg">
+            <div class="stack-card-top"><span>02 / COMPARE</span><span>FOUR ROUTE PRIORITIES</span></div>
+            <div class="stack-card-content"><div class="stack-card-symbol">↗</div><div><p class="stack-card-kicker">CHOOSE WHAT MATTERS</p><h3>Time, distance,<br/><em>fare or fewer stops.</em></h3><p>Compare the route options returned by the routing engine and inspect the journey details before choosing.</p><div class="stack-metric-row"><span>FASTEST</span><span>SHORTEST</span><span>LOWEST FARE</span><span>FEWEST STOPS</span></div></div></div>
+            <div class="stack-card-bottom"><span>COMPARE ROUTE OPTIONS</span><span>02 — 03</span></div>
+          </article>
+          <article class="journey-stack-card squircle-surface" style="--card-index:2;--card-tilt:-.5deg">
+            <div class="stack-card-top"><span>03 / MOVE</span><span>YOUR NEXT CONNECTION</span></div>
+            <div class="stack-card-content"><div class="stack-card-symbol">↝</div><div><p class="stack-card-kicker">MAKE THE NEXT MOVE</p><h3>Know your route.<br/><em>Move with clarity.</em></h3><p>Follow the selected journey on the map and review its stops, transfers, estimated time and fare information.</p><button class="button button-primary stack-cta" data-view="planner">OPEN ROUTE PLANNER <span>↗</span></button></div></div>
+            <div class="stack-card-bottom"><span>DELHI · NCR</span><span>03 — 03</span></div>
+          </article>
+        </div>
+        <div class="journey-stack-credit">SQUIRCLE SURFACE EFFECT · SCROLL-LINKED CARD STACK</div>
+      </section>
+\n      <section class="honesty-band"><span class="eyebrow-mark"></span><p>BUILT TO HELP YOU PLAN.<br /><b>NOT TO PRETEND WE KNOW EVERYTHING.</b></p><span class="band-note">A CURATED DEMO NETWORK · NOT A LIVE FEED</span></section>
     </section>
 
     <section class="view planner-view" id="planner-view" aria-label="Route planner">
