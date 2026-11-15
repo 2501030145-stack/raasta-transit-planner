@@ -31,6 +31,7 @@ struct FareLabel {
     double leg_distance = 0.0;
     int leg_stops = 0;
     VisitedBits visited_bits;
+    unsigned short visited_count = 0;
     bool active = true;
 };
 
@@ -74,7 +75,10 @@ bool visitedSubset(
     const FareLabel& a,
     const FareLabel& b
 ) {
-    return (a.visited_bits & b.visited_bits) == a.visited_bits;
+    // A subset cannot contain more stations than the set it is contained in.
+    // Check this cheap invariant before comparing the full bitset.
+    return a.visited_count <= b.visited_count &&
+           (a.visited_bits & b.visited_bits) == a.visited_bits;
 }
 
 bool dominates(const FareLabel& a, const FareLabel& b) {
@@ -237,6 +241,7 @@ models::RouteResult findFareAwareRoute(
     if (source < 0 || static_cast<size_t>(source) > MAX_STATION_ID)
         return not_found;
     initial.visited_bits.set(static_cast<size_t>(source));
+    initial.visited_count = 1;
     labels.push_back(std::move(initial));
     queue.push({0.0, 0});
 
@@ -317,6 +322,7 @@ models::RouteResult findFareAwareRoute(
                 static_cast<size_t>(edge.to_station_id) > MAX_STATION_ID)
                 continue;
             next.visited_bits.set(static_cast<size_t>(edge.to_station_id));
+            ++next.visited_count;
 
             if (edge.is_transfer) {
                 next.completed_fare +=
