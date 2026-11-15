@@ -23,14 +23,14 @@ using VisitedBits = std::bitset<MAX_STATION_ID + 1>;
 
 struct FareLabel {
     int station = 0;
+    size_t parent_label = std::numeric_limits<size_t>::max();
+    size_t incoming_edge_index = 0;
     double completed_fare = 0.0;
     int active_type = 0;
     std::string active_line;
     double leg_distance = 0.0;
     int leg_stops = 0;
-    std::vector<int> visited;
     VisitedBits visited_bits;
-    std::vector<graph::GraphEdge> edges;
     bool active = true;
 };
 
@@ -88,19 +88,20 @@ bool dominates(const FareLabel& a, const FareLabel& b) {
 
 models::RouteResult buildFareRoute(
     const graph::TransportGraph& graph,
-    const FareLabel& label
+    const std::vector<int>& visited,
+    const std::vector<graph::GraphEdge>& edges
 ) {
     models::RouteResult result;
     result.found = true;
     result.algorithm_used = "fare_aware_search";
     result.criteria = "cheapest";
-    result.number_of_stops = static_cast<int>(label.visited.size());
+    result.number_of_stops = static_cast<int>(visited.size());
 
     int current_line_id = -1;
 
-    for (size_t i = 0; i < label.edges.size(); ++i) {
-        const auto& edge = label.edges[i];
-        const int from = label.visited[i];
+    for (size_t i = 0; i < edges.size(); ++i) {
+        const auto& edge = edges[i];
+        const int from = visited[i];
         const int to = edge.to_station_id;
 
         models::RouteSegment segment;
@@ -145,11 +146,50 @@ models::RouteResult buildFareRoute(
         std::round(result.total_distance_km * 10.0) / 10.0;
     result.estimated_time_min = std::round(result.estimated_time_min);
 
-    for (int station_id : label.visited) {
+    for (int station_id : visited) {
         result.stations.push_back(graph.getStation(station_id));
     }
 
     return result;
+}
+
+
+models::RouteResult buildFareRoute(
+    const graph::TransportGraph& graph,
+    const std::vector<FareLabel>& labels,
+    size_t target_label
+) {
+    std::vector<int> visited;
+    std::vector<graph::GraphEdge> edges;
+    std::vector<size_t> chain;
+
+    for (size_t id = target_label;
+         id != std::numeric_limits<size_t>::max() && id < labels.size();
+         id = labels[id].parent_label) {
+        chain.push_back(id);
+    }
+
+    std::reverse(chain.begin(), chain.end());
+    visited.reserve(chain.size());
+    if (!chain.empty()) edges.reserve(chain.size() - 1);
+
+    for (size_t i = 0; i < chain.size(); ++i) {
+        const FareLabel& label = labels[chain[i]];
+        visited.push_back(label.station);
+
+        if (i > 0) {
+            const FareLabel& parent = labels[label.parent_label];
+            const auto& parent_edges = graph.getEdges(parent.station);
+
+            if (label.incoming_edge_index >= parent_edges.size()) {
+                return models::RouteResult{};
+            }
+
+            edges.push_back(parent_edges[label.incoming_edge_index]);
+        }
+    }
+
+    return buildFareRoute(graph, visited, edges);
 }
 
 models::RouteResult findFareAwareRoute(
@@ -194,7 +234,6 @@ models::RouteResult findFareAwareRoute(
 
     FareLabel initial;
     initial.station = source;
-    initial.visited.push_back(source);
     if (source < 0 || static_cast<size_t>(source) > MAX_STATION_ID)
         return not_found;
     initial.visited_bits.set(static_cast<size_t>(source));
@@ -255,11 +294,13 @@ models::RouteResult findFareAwareRoute(
             continue;
         }
 
-        const auto edges = allowed_types.empty()
-            ? graph.getEdges(current.station)
-            : graph.getFilteredEdges(current.station, allowed_types);
-
-        for (const auto& edge : edges) {
+        const auto& edges = graph.getEdges(current.station);
+        for (size_t edge_index = 0; edge_index < edges.size(); ++edge_index) {
+            const auto& edge = edges[edge_index];
+            if (!allowed_types.empty() &&
+                allowed_types.count(edge.transport_type_id) == 0) {
+                continue;
+            }
             if (!graph.hasStation(edge.to_station_id)) continue;
 
             // A cheapest path never needs to revisit a station:
@@ -270,12 +311,12 @@ models::RouteResult findFareAwareRoute(
 
             FareLabel next = current;
             next.station = edge.to_station_id;
-            next.visited.push_back(edge.to_station_id);
+            next.parent_label = label_id;
+            next.incoming_edge_index = edge_index;
             if (edge.to_station_id < 0 ||
                 static_cast<size_t>(edge.to_station_id) > MAX_STATION_ID)
                 continue;
             next.visited_bits.set(static_cast<size_t>(edge.to_station_id));
-            next.edges.push_back(edge);
 
             if (edge.is_transfer) {
                 next.completed_fare +=
@@ -373,7 +414,7 @@ models::RouteResult findFareAwareRoute(
         return not_found;
     }
 
-    return buildFareRoute(graph, labels[best_label]);
+    return buildFareRoute(graph, labels, best_label);
 }
 
 } // namespace
