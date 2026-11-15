@@ -81,13 +81,31 @@ bool visitedSubset(
            (a.visited_bits & b.visited_bits) == a.visited_bits;
 }
 
-bool dominates(const FareLabel& a, const FareLabel& b) {
+struct DominanceRelation {
+    bool a_dominates_b = false;
+    bool b_dominates_a = false;
+};
+
+DominanceRelation compareDominance(
+    const FareLabel& a,
+    const FareLabel& b
+) {
     constexpr double EPS = 1e-9;
 
-    return a.completed_fare <= b.completed_fare + EPS &&
-           a.leg_distance <= b.leg_distance + EPS &&
-           a.leg_stops <= b.leg_stops &&
-           visitedSubset(a, b);
+    const bool a_numeric =
+        a.completed_fare <= b.completed_fare + EPS &&
+        a.leg_distance <= b.leg_distance + EPS &&
+        a.leg_stops <= b.leg_stops;
+
+    const bool b_numeric =
+        b.completed_fare <= a.completed_fare + EPS &&
+        b.leg_distance <= a.leg_distance + EPS &&
+        b.leg_stops <= a.leg_stops;
+
+    DominanceRelation relation;
+    if (a_numeric) relation.a_dominates_b = visitedSubset(a, b);
+    if (b_numeric) relation.b_dominates_a = visitedSubset(b, a);
+    return relation;
 }
 
 models::RouteResult buildFareRoute(
@@ -359,24 +377,36 @@ models::RouteResult findFareAwareRoute(
 
             auto& bucket = state_labels[key];
             bool rejected = false;
+            std::vector<size_t> dominated_ids;
+            dominated_ids.reserve(bucket.size());
 
+            // Compare both directions in one bucket traversal. Defer
+            // deactivation until we know that no existing label dominates
+            // the candidate, preserving the original Pareto-set semantics.
             for (size_t existing_id : bucket) {
-                if (existing_id < labels.size() &&
-                    labels[existing_id].active &&
-                    (++dominance_checks, dominates(labels[existing_id], next))) {
+                if (existing_id >= labels.size() ||
+                    !labels[existing_id].active) {
+                    continue;
+                }
+
+                ++dominance_checks;
+                const DominanceRelation relation =
+                    compareDominance(labels[existing_id], next);
+
+                if (relation.a_dominates_b) {
                     rejected = true;
                     break;
+                }
+
+                if (relation.b_dominates_a) {
+                    dominated_ids.push_back(existing_id);
                 }
             }
 
             if (rejected) continue;
 
-            for (size_t existing_id : bucket) {
-                if (existing_id < labels.size() &&
-                    labels[existing_id].active &&
-                    (++dominance_checks, dominates(next, labels[existing_id]))) {
-                    labels[existing_id].active = false;
-                }
+            for (size_t existing_id : dominated_ids) {
+                labels[existing_id].active = false;
             }
 
             bucket.erase(
