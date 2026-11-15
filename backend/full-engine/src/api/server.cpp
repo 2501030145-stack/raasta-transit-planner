@@ -4,11 +4,26 @@
 #include "raasta/services/graph_builder_service.hpp"
 #include <nlohmann/json.hpp>
 #include <iostream>
+#include <atomic>
 
 using json = nlohmann::json;
 
 namespace raasta {
 namespace api {
+namespace {
+std::atomic_flag cheapest_search_in_progress = ATOMIC_FLAG_INIT;
+
+class CheapestSearchGuard {
+public:
+    CheapestSearchGuard() : acquired_(!cheapest_search_in_progress.test_and_set(std::memory_order_acquire)) {}
+    ~CheapestSearchGuard() {
+        if (acquired_) cheapest_search_in_progress.clear(std::memory_order_release);
+    }
+    bool acquired() const { return acquired_; }
+private:
+    bool acquired_;
+};
+} // namespace
 
 Server::Server(
     const config::Config& config,
@@ -282,6 +297,12 @@ void Server::registerRoutes() {
             rreq.source_station_id = body["source_station_id"].get<int>();
             rreq.destination_station_id = body["destination_station_id"].get<int>();
             rreq.criteria = body.value("criteria", "fastest");
+            CheapestSearchGuard cheapest_guard;
+            if (rreq.criteria == "cheapest" && !cheapest_guard.acquired()) {
+                res.status = 503;
+                res.set_content(R"({"success":false,"error":"A cheapest-route search is already running. Please retry shortly."})", "application/json");
+                return;
+            }
             rreq.departure_date = body.value("departure_date", "");
             rreq.departure_time = body.value("departure_time", "09:00");
             rreq.day_type = body.value("day_type", "weekday");
@@ -332,6 +353,12 @@ void Server::registerRoutes() {
                 rreq.transport_modes = body["transport_modes"].get<std::vector<std::string>>();
             }
 
+            CheapestSearchGuard cheapest_guard;
+            if (!cheapest_guard.acquired()) {
+                res.status = 503;
+                res.set_content(R"({"success":false,"error":"A route comparison is already running. Please retry shortly."})", "application/json");
+                return;
+            }
             auto results = route_service_->compareRoutes(rreq);
             json j;
             j["success"] = true;
