@@ -328,6 +328,12 @@ void Server::registerRoutes() {
     svr_.Post("/api/v1/routes/plan", route_handler);
 
     auto route_compare_handler = [this](const httplib::Request& req, httplib::Response& res) {
+        CheapestSearchGuard cheapest_guard;
+        if (!cheapest_guard.acquired()) {
+            res.status = 503;
+            res.set_content(R"({"success":false,"error":"A route comparison is already calculating fares. Please retry shortly."})", "application/json");
+            return;
+        }
         try {
             auto body = json::parse(req.body);
             services::RouteRequest rreq;
