@@ -190,7 +190,7 @@ int main() {
     {
         // Create a completely isolated graph for this test to avoid interference from other tests
         auto isolated_graph = std::make_shared<graph::TransportGraph>();
-        auto isolated_fare_svc = std::make_shared<services::FareService>(fare_svc);
+        auto isolated_fare_svc = fare_svc;
         services::RouteService isolated_route_svc(isolated_graph, isolated_fare_svc);
 
         // Both paths end at station 8 (destination):
