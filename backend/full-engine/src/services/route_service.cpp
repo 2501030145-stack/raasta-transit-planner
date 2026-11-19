@@ -277,7 +277,22 @@ models::RouteResult findFareAwareRoute(
     size_t max_queue_size = queue.size();
     constexpr double EPS = 1e-9;
 
+    constexpr size_t MAX_EXPANDED_LABELS = 50000;
+    constexpr auto MAX_SEARCH_TIME = std::chrono::milliseconds(2000);
+
     while (!queue.empty()) {
+        const auto elapsed = std::chrono::steady_clock::now() - diagnostic_start;
+        if (expanded_labels >= MAX_EXPANDED_LABELS || elapsed >= MAX_SEARCH_TIME) {
+            std::cerr << "[fare_search_limit] expanded=" << expanded_labels
+                      << " generated=" << generated_labels
+                      << " elapsed_ms="
+                      << std::chrono::duration_cast<std::chrono::milliseconds>(elapsed).count()
+                      << " result=unavailable_not_proven_optimal" << std::endl;
+            // Do not return a provisional candidate as "cheapest": the search
+            // has not proved that no lower-fare route remains in the queue.
+            return not_found;
+        }
+
         const auto [lower_bound, label_id] = queue.top();
         queue.pop();
 
