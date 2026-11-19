@@ -186,32 +186,173 @@ int main() {
         std::cout << "  PASS: Non-fare routing modes work despite unavailable fare data\n";
     }
 
-    std::cout << "[test_route_service] Test 5: Valid fare route selectable over unavailable fare candidate\n";
+    std::cout << "[test_route_service] Test 5: Valid fare route selectable over unavailable fare candidate (same destination)\n";
     {
-        // Path 1->2->3 (valid fare = 40) vs 1->2->4 (unavailable fare = infinity)
-        // Cheapest should pick the valid fare path even though both exist
+        // Create a completely isolated graph for this test to avoid interference from other tests
+        auto isolated_graph = std::make_shared<graph::TransportGraph>();
+        auto isolated_fare_svc = std::make_shared<services::FareService>(fare_svc);
+        services::RouteService isolated_route_svc(isolated_graph, isolated_fare_svc);
+
+        // Both paths end at station 8 (destination):
+        // Path A: 1 -> 2 -> 3 -> 8 (all valid fares)
+        // Path B: 1 -> 2 -> 8 (unavailable fare on 2->8)
+        // Cheapest should pick the valid path to station 8
+
+        // Build a minimal graph: 1 -> 2 (valid) -> 3 (valid) -> 8 (destination)
+        // and 1 -> 2 -> 8 (unavailable fare on 2->8)
+        models::Station s1{1, "Station A", "SA", 28.6, 77.2, 1, 1, "metro_station"};
+        models::Station s2{2, "Station B", "SB", 28.6, 77.2, 1, 1, "metro_station"};
+        models::Station s3{3, "Station C", "SC", 28.6, 77.2, 1, 1, "metro_station"};
+        models::Station s8{8, "Destination", "DST", 28.6, 77.2, 1, 1, "metro_station"};
+
+
+        isolated_graph->addStation(s1);
+        isolated_graph->addStation(s2);
+        isolated_graph->addStation(s3);
+        isolated_graph->addStation(s8);
+
+        // 1 -> 2 (valid fare)
+        graph::GraphEdge e12;
+        e12.to_station_id = 2;
+        e12.line_id = 1;
+        e12.transport_type_id = 1;
+        e12.distance_km = 5.0;
+        e12.travel_time_min = 8.0;
+        e12.line_name = "Test Metro Line";
+        e12.line_color = "#FF0000";
+        e12.fare = 20.0;
+        isolated_graph->addEdge(1, e12);
+
+        // 2 -> 3 (valid fare)
+        graph::GraphEdge e23;
+        e23.to_station_id = 3;
+        e23.line_id = 1;
+        e23.transport_type_id = 1;
+        e23.distance_km = 5.0;
+        e23.travel_time_min = 8.0;
+        e23.line_name = "Test Metro Line";
+        e23.line_color = "#FF0000";
+        e23.fare = 20.0;
+        isolated_graph->addEdge(2, e23);
+
+        // 3 -> 8 (valid fare, destination)
+        graph::GraphEdge e38;
+        e38.to_station_id = 8;
+        e38.line_id = 1;
+        e38.transport_type_id = 1;
+        e38.distance_km = 5.0;
+        e38.travel_time_min = 8.0;
+        e38.line_name = "Test Metro Line";
+        e38.line_color = "#FF0000";
+        e38.fare = 20.0;
+        isolated_graph->addEdge(3, e38);
+
+        // Unavailable edge from 2 to 8 (bypass)
+        graph::GraphEdge e28;
+        e28.to_station_id = 8;
+        e28.line_id = 2;
+        e28.transport_type_id = 99; // Unknown -> unavailable fare
+        e28.distance_km = 5.0;
+        e28.travel_time_min = 8.0;
+        e28.line_name = "Unavailable Fare Line";
+        e28.line_color = "#000000";
+        e28.fare = -1.0;
+        isolated_graph->addEdge(2, e28);
+
         services::RouteRequest req;
         req.source_station_id = 1;
-        req.destination_station_id = 3; // Valid fare path
+        req.destination_station_id = 8; // Same destination for both paths
         req.criteria = "cheapest";
+        req.fare_class = "standard";
+        req.day_type = "weekday";
+        req.departure_time = "10:00";
+        req.is_smart_card = false;
 
-        auto res = route_svc.findRoute(req);
+        auto res = isolated_route_svc.findRoute(req);
         assert(res.found && "Valid fare path should be selected");
         assert(res.total_fare > 0.0 && "Should have valid fare");
-        assert(res.total_fare < std::numeric_limits<double>::infinity());
-        std::cout << "  PASS: Valid fare path correctly chosen over unavailable fare alternative\n";
+        // Path 1->2->3->8: 20 + 20 + 20 = 60 (or whatever the fare calculates to)
+        assert(std::isfinite(res.total_fare) && "Total fare should be finite");
+
+        // Verify the path taken is 1->2->3->8 (not 1->2->8)
+        assert(res.stations.size() == 4 && "Path should have 4 stations (1,2,3,8)");
+        assert(res.stations[0].id == 1 && "Start at station 1");
+        assert(res.stations[1].id == 2 && "Pass through station 2");
+        assert(res.stations[2].id == 3 && "Pass through station 3");
+        assert(res.stations[3].id == 8 && "End at station 8");
+
+        std::cout << "  PASS: Valid fare path correctly chosen over unavailable fare alternative, fare = " << res.total_fare << "\n";
     }
 
     std::cout << "[test_route_service] Test 6: Unavailable fare on intermediate leg handled correctly\n";
     {
-        // Test that an intermediate leg with unavailable fare makes completed_fare infinite
-        // and the label is not selected as best
+        // Path: 1 -> 2 -> X -> 8 where 2->X has unavailable fare (intermediate leg)
+        // X is station 7 (intermediate), destination is 8
+        // The ONLY path to destination 8 goes through unavailable edge 2->7
+
+        // Create a completely isolated graph for this test to avoid interference from other tests
+        auto isolated_graph = std::make_shared<graph::TransportGraph>();
+        auto& db = repository::DbConnection::instance();
+        auto isolated_fare_svc = std::make_shared<services::FareService>(db);
+        services::RouteService isolated_route_svc(isolated_graph, isolated_fare_svc);
+
+        // Build a minimal graph: 1 -> 2 (valid) -> 7 (unavailable) -> 8 (destination)
+        models::Station s1{1, "Station A", "SA", 28.6, 77.2, 1, 1, "metro_station"};
+        models::Station s2{2, "Station B", "SB", 28.6, 77.2, 1, 1, "metro_station"};
+        models::Station sx{7, "Station X", "SX", 28.6, 77.2, 1, 1, "metro_station"};
+        models::Station s8{8, "Destination", "DST", 28.6, 77.2, 1, 1, "metro_station"};
+
+        isolated_graph->addStation(s1);
+        isolated_graph->addStation(s2);
+        isolated_graph->addStation(sx);
+        isolated_graph->addStation(s8);
+
+        // 1 -> 2 (valid fare)
+        graph::GraphEdge e12;
+        e12.to_station_id = 2;
+        e12.line_id = 1;
+        e12.transport_type_id = 1;
+        e12.distance_km = 5.0;
+        e12.travel_time_min = 8.0;
+        e12.line_name = "Test Metro Line";
+        e12.line_color = "#FF0000";
+        e12.fare = 20.0;
+        isolated_graph->addEdge(1, e12);
+
+        // 2 -> X (unavailable fare) - intermediate leg
+        graph::GraphEdge e2x;
+        e2x.to_station_id = 7;
+        e2x.line_id = 99;
+        e2x.transport_type_id = 99;
+        e2x.distance_km = 3.0;
+        e2x.travel_time_min = 5.0;
+        e2x.line_name = "Unavailable Intermediate";
+        e2x.line_color = "#000000";
+        e2x.fare = -1.0;
+        isolated_graph->addEdge(2, e2x);
+
+        // X -> destination (valid fare)
+        graph::GraphEdge ex3;
+        ex3.to_station_id = 8;
+        ex3.line_id = 1;
+        ex3.transport_type_id = 1;
+        ex3.distance_km = 5.0;
+        ex3.travel_time_min = 8.0;
+        ex3.line_name = "Test Metro Line";
+        ex3.line_color = "#FF0000";
+        ex3.fare = 20.0;
+        isolated_graph->addEdge(7, ex3);
+
         services::RouteRequest req;
         req.source_station_id = 1;
-        req.destination_station_id = 4;
+        req.destination_station_id = 8;
         req.criteria = "cheapest";
+        req.fare_class = "standard";
+        req.day_type = "weekday";
+        req.departure_time = "10:00";
+        req.is_smart_card = false;
 
-        auto res = route_svc.findRoute(req);
+        auto res = isolated_route_svc.findRoute(req);
         assert(!res.found && "Route with intermediate unavailable fare should not be found");
         std::cout << "  PASS: Intermediate unavailable fare correctly rejected\n";
     }
