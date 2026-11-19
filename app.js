@@ -185,6 +185,7 @@ function normalizeBackendRoute(route) {
 }
 
 async function findRoutes() {
+  if (findRoutes.inFlight) return;
   const origin = $('#origin').value, destination = $('#destination').value;
   if (!origin || !destination) return;
   if (origin === destination) { $('#route-list').innerHTML = '<div class="empty-routes"><b>Choose two different stations.</b><span>Route origin and destination must differ.</span></div>'; return; }
@@ -193,6 +194,8 @@ async function findRoutes() {
   const labels = { time: 'FASTEST', distance: 'SHORTEST', fare: 'LOWEST FARE', stops: 'FEWEST STOPS' };
   $('#route-list').innerHTML = '<div class="empty-routes"><b>Finding live routes…</b><span>Querying the Raasta routing engine.</span></div>';
   $('#route-count').textContent = '…';
+  findRoutes.inFlight = true;
+  $('#find-routes').disabled = true;
   try {
     const api = await import('./route-service.mjs');
     const comparisons = await api.compareRoutes({ sourceStationId: originStation.id, destinationStationId: destinationStation.id, transportModes: [] });
@@ -220,6 +223,9 @@ async function findRoutes() {
     $('#route-list').innerHTML = `<div class="empty-routes"><b>Route service unavailable.</b><span>${escapeHtml(error.message || 'Could not retrieve routes from the backend.')}</span></div>`;
     if (state.routeLayer && state.map) state.map.removeLayer(state.routeLayer);
     state.routeLayer = null;
+  } finally {
+    findRoutes.inFlight = false;
+    $('#find-routes').disabled = false;
   }
 }
 
