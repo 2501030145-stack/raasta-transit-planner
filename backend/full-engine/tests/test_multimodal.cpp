@@ -99,6 +99,103 @@ int main() {
     services::GraphBuilderService builder(db);
     builder.loadFromCsv(*full_graph, "data");
 
+    // Add legacy test stations that are outside production NCR scope
+    // LJN (Lucknow Junction), LKO (Lucknow Charbagh), LKO_CHR (Charbagh Metro)
+    models::Station ljn{9901, "Lucknow Junction", "LJN", 26.8320, 80.9210, 1, 2, "railway_station"};
+    models::Station lko{9902, "Lucknow Charbagh", "LKO", 26.8315, 80.9220, 1, 2, "railway_station"};
+    models::Station lko_chr{9903, "Charbagh Railway Station Metro", "LKO_CHR", 26.8322, 80.9205, 1, 2, "metro_station"};
+    full_graph->addStation(ljn);
+    full_graph->addStation(lko);
+    full_graph->addStation(lko_chr);
+
+    // Agra stations - outside production NCR but needed for multimodal test
+    models::Station agr_agf{9911, "Agra Fort", "AGR_AGF", 27.1784, 78.0264, 1, 2, "metro_station"};
+    models::Station af{9912, "Agra Fort", "AF", 27.1810, 78.0210, 1, 2, "railway_station"};
+    full_graph->addStation(agr_agf);
+    full_graph->addStation(af);
+
+    // Kanpur stations - outside production NCR but needed for multimodal test
+    models::Station knp_mjl{9921, "Moti Jheel", "KNP_MJL", 26.4764, 80.3168, 1, 2, "metro_station"};
+    models::Station cnb{9922, "Kanpur Central", "CNB", 26.4540, 80.3500, 1, 2, "railway_station"};
+    full_graph->addStation(knp_mjl);
+    full_graph->addStation(cnb);
+
+    // LJN <-> LKO railway connection
+    graph::GraphEdge ljn_lko;
+    ljn_lko.to_station_id = 9902;
+    ljn_lko.line_id = 2;
+    ljn_lko.transport_type_id = 3;
+    ljn_lko.distance_km = 0.15;
+    ljn_lko.travel_time_min = 2.0;
+    ljn_lko.line_name = "Lucknow NER-NR Link";
+    ljn_lko.is_transfer = false;
+    full_graph->addEdge(9901, ljn_lko);
+
+    // LKO <-> LKO_CHR interchange transfer
+    graph::GraphEdge lko_chr_transfer;
+    lko_chr_transfer.to_station_id = 9903;
+    lko_chr_transfer.line_id = 0;
+    lko_chr_transfer.transport_type_id = 0;
+    lko_chr_transfer.distance_km = 0.1;
+    lko_chr_transfer.travel_time_min = 2.0;
+    lko_chr_transfer.is_transfer = true;
+    lko_chr_transfer.line_name = "Charbagh Interchange";
+    full_graph->addEdge(9902, lko_chr_transfer);
+
+    // Also add reverse transfer
+    graph::GraphEdge chr_lko_transfer;
+    chr_lko_transfer.to_station_id = 9902;
+    chr_lko_transfer.line_id = 0;
+    chr_lko_transfer.transport_type_id = 0;
+    chr_lko_transfer.distance_km = 0.1;
+    chr_lko_transfer.travel_time_min = 2.0;
+    chr_lko_transfer.is_transfer = true;
+    chr_lko_transfer.line_name = "Charbagh Interchange";
+    full_graph->addEdge(9903, chr_lko_transfer);
+
+    // LJN <-> LKO_CHR interchange transfer (direct metro interchange)
+    graph::GraphEdge ljn_chr_transfer;
+    ljn_chr_transfer.to_station_id = 9903;
+    ljn_chr_transfer.line_id = 0;
+    ljn_chr_transfer.transport_type_id = 0;
+    ljn_chr_transfer.distance_km = 0.05;
+    ljn_chr_transfer.travel_time_min = 1.0;
+    ljn_chr_transfer.is_transfer = true;
+    ljn_chr_transfer.line_name = "Charbagh Interchange";
+    full_graph->addEdge(9901, ljn_chr_transfer);
+
+    // Also add reverse transfer
+    graph::GraphEdge chr_ljn_transfer;
+    chr_ljn_transfer.to_station_id = 9901;
+    chr_ljn_transfer.line_id = 0;
+    chr_ljn_transfer.transport_type_id = 0;
+    chr_ljn_transfer.distance_km = 0.05;
+    chr_ljn_transfer.travel_time_min = 1.0;
+    chr_ljn_transfer.is_transfer = true;
+    chr_ljn_transfer.line_name = "Charbagh Interchange";
+    full_graph->addEdge(9903, chr_ljn_transfer);
+
+    // Agra Fort Metro <-> Agra Fort Railway transfer
+    graph::GraphEdge agr_af_transfer;
+    agr_af_transfer.to_station_id = 9912;
+    agr_af_transfer.line_id = 0;
+    agr_af_transfer.transport_type_id = 0;
+    agr_af_transfer.distance_km = 0.05;
+    agr_af_transfer.travel_time_min = 1.0;
+    agr_af_transfer.is_transfer = true;
+    agr_af_transfer.line_name = "Agra Fort Interchange";
+    full_graph->addEdge(9911, agr_af_transfer);
+
+    graph::GraphEdge af_agr_transfer;
+    af_agr_transfer.to_station_id = 9911;
+    af_agr_transfer.line_id = 0;
+    af_agr_transfer.transport_type_id = 0;
+    af_agr_transfer.distance_km = 0.05;
+    af_agr_transfer.travel_time_min = 1.0;
+    af_agr_transfer.is_transfer = true;
+    af_agr_transfer.line_name = "Agra Fort Interchange";
+    full_graph->addEdge(9912, af_agr_transfer);
+
     auto findByCode = [&](const std::string& code) -> int {
         for (int sid : full_graph->getAllStationIds()) {
             if (full_graph->getStation(sid).code == code) return sid;
