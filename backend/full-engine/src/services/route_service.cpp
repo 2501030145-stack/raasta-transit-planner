@@ -61,7 +61,10 @@ double activeLegFare(
         makeLegContext(base, label)
     );
 
-    return fare.status == "unavailable" ? 0.0 : fare.amount;
+    if (fare.status == "unavailable") {
+        return std::numeric_limits<double>::infinity();
+    }
+    return fare.amount;
 }
 
 bool containsStation(const FareLabel& label, int station) {
@@ -248,7 +251,8 @@ models::RouteResult findFareAwareRoute(
                 current.completed_fare +
                 activeLegFare(current, fare_service, base);
 
-            if (total < best_fare) {
+            // Reject routes with unavailable fare legs (infinity)
+            if (std::isfinite(total) && total < best_fare) {
                 best_fare = total;
                 best_label = label_id;
             }
@@ -345,6 +349,12 @@ models::RouteResult findFareAwareRoute(
             const double estimate =
                 next.completed_fare +
                 activeLegFare(next, fare_service, base);
+
+            // Reject non-finite fare estimates (unavailable fares represented as infinity)
+            // before they enter the priority queue to avoid corrupting the search
+            if (!std::isfinite(estimate)) {
+                continue;
+            }
 
             const size_t next_id = labels.size();
             labels.push_back(std::move(next));
